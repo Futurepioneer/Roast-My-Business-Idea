@@ -13,13 +13,13 @@
 <!-- Open Graph / Twitter (thumbnail when shared) -->
 <meta property="og:title" content="AI Pioneer — Roast My Business Idea" />
 <meta property="og:description" content="Get brutally honest business reviews + actionable roadmaps. Limited spots weekly." />
-<meta property="og:image" content="/assets/og-thumbnail.jpg" />
+<meta property="og:image" content="https://www.roastyourbiz.com/assets/og-thumbnail.jpg" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.roastyourbiz.com" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="AI Pioneer — Roast My Business Idea" />
 <meta name="twitter:description" content="Brutally honest business roasts that make you money." />
-<meta name="twitter:image" content="/assets/og-thumbnail.jpg" />
+<meta name="twitter:image" content="https://www.roastyourbiz.com/assets/og-thumbnail.jpg" />
 
 <style>
   /* Reset & base */
@@ -51,7 +51,8 @@
   /* Hero */
   .hero{text-align:center;padding:3rem 1rem 1rem}
   .hero h2{font-size:2.5rem;font-weight:900;margin:0 0 .5rem;color:#00e5ff;text-shadow:0 0 8px #00e5ff88}
-  .hero p{font-size:1.2rem;max-width:640px;margin:.5rem auto 0;color:#cceeff}
+  .hero p{font-size:1.2rem;max-width:640px;margin:.5rem auto 1.5rem;color:#cceeff}
+  .hero .hero-image{max-width:720px;margin:0 auto 1rem;border-radius:12px;overflow:hidden;box-shadow:0 0 20px #00d8ff88}
 
   /* Problem */
   .problem,.solution,.risk-reversal,.urgency,.final-cta{background:#111a22cc;border-radius:12px}
@@ -59,7 +60,7 @@
   .problem h3,.solution h3{font-size:1.75rem;font-weight:800;margin:0 0 1rem}
   .problem p,.solution p{font-size:1.05rem;color:#eee;margin:.6rem 0}
 
-  /* Social proof (no images, to avoid broken links) */
+  /* Social proof (text-only to avoid broken images) */
   .social-proof-bar{background:linear-gradient(90deg,#203a43,#2c5364);padding:1rem;border-radius:12px;margin:2rem auto;box-shadow:0 0 15px #00d8ff55 inset;max-width:960px}
   .sp-grid{display:flex;gap:.75rem;overflow-x:auto}
   .sp-card{flex:0 0 280px;background:#0f2027;border-radius:12px;padding:1rem;box-shadow:0 0 10px #00d8ff88}
@@ -143,6 +144,9 @@
   <section class="hero" aria-labelledby="hero-title">
     <h2 id="hero-title">Stop Getting Fake "That's a Great Idea!" Feedback</h2>
     <p>Get BRUTALLY HONEST business reviews that actually help you succeed. Over 200+ entrepreneurs roasted and counting.</p>
+    <div class="hero-image" aria-label="Share thumbnail / hero image">
+      <img src="/assets/og-thumbnail.jpg" alt="AI Pioneer business roast — customer success montage" />
+    </div>
   </section>
 
   <!-- Problem -->
@@ -159,7 +163,7 @@
     <p><strong>Don't let false praise steal your time and money.</strong> Get the truth before it's too late.</p>
   </section>
 
-  <!-- Social Proof (text-only cards to avoid broken images) -->
+  <!-- Social Proof (text-only cards) -->
   <section class="social-proof-bar" aria-label="Real results from entrepreneurs">
     <div class="sp-grid" role="list">
       <article class="sp-card" role="listitem">
