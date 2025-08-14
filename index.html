@@ -6,6 +6,21 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <title>AI Pioneer - Brutally Honest Business Roasts That Make You Money</title>
 <meta name="description" content="Stop wasting months building a business nobody wants. Get brutally honest, expert business reviews with actionable roadmaps. Limited spots weekly." />
+
+<!-- Favicon (optional) -->
+<link rel="icon" href="/assets/ai-pioneer-logo.png" type="image/png" />
+
+<!-- Open Graph / Twitter (thumbnail when shared) -->
+<meta property="og:title" content="AI Pioneer — Roast My Business Idea" />
+<meta property="og:description" content="Get brutally honest business reviews + actionable roadmaps. Limited spots weekly." />
+<meta property="og:image" content="/assets/og-thumbnail.jpg" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.roastyourbiz.com" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="AI Pioneer — Roast My Business Idea" />
+<meta name="twitter:description" content="Brutally honest business roasts that make you money." />
+<meta name="twitter:image" content="/assets/og-thumbnail.jpg" />
+
 <style>
   /* Reset & base */
   *, *::before, *::after { box-sizing: border-box; }
@@ -33,18 +48,32 @@
   /* Container */
   .container { max-width: 960px; margin: 0 auto; padding: 0 1rem 3rem; }
 
-  /* Header */
+  /* Header — updated (logo + live timer) */
   header {
     position: sticky; top: 0; left: 0; right: 0;
     background: linear-gradient(90deg, #0f2027, #203a43);
-    padding: 1rem 1rem 0.5rem; z-index: 9999;
+    padding: 0.75rem 1rem; z-index: 9999;
     box-shadow: 0 2px 8px rgba(0,0,0,0.7);
-    display: flex; justify-content: space-between; align-items: center;
   }
-  header h1 { font-size: 1.25rem; font-weight: 900; color: #00d8ff; margin: 0; }
+  .header-inner {
+    display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  }
+  .brand {
+    display: inline-flex; align-items: center; gap: 0.75rem; text-decoration: none;
+  }
+  .brand img {
+    width: 40px; height: 40px; object-fit: contain;
+    filter: drop-shadow(0 0 6px rgba(0,216,255,0.45));
+  }
+  .brand h1 {
+    font-size: 1.15rem; line-height: 1; margin: 0; font-weight: 900; color: #00d8ff;
+    letter-spacing: 0.3px;
+  }
   #countdown {
-    font-family: 'Courier New', Courier, monospace; font-weight: 700; font-size: 1.1rem;
-    color: #ff4c4c; background: #1b1b1b; padding: 0.25rem 0.75rem; border-radius: 6px; user-select: none;
+    font-family: 'Courier New', Courier, monospace; font-weight: 700; font-size: 1.05rem;
+    color: #ff4c4c; background: #1b1b1b; padding: 0.35rem 0.75rem; border-radius: 6px;
+    user-select: none; min-width: 110px; text-align: center;
+    box-shadow: inset 0 0 0 1px #2a2a2a;
   }
 
   /* Hero */
@@ -76,9 +105,6 @@
     display: inline-block; background: #0f2027; border-radius: 12px; padding: 1rem; margin: 0 0.5rem;
     width: 280px; vertical-align: top; box-shadow: 0 0 10px #00d8ff88;
   }
-  .testimonial img {
-    border-radius: 50%; width: 56px; height: 56px; object-fit: cover; margin-bottom: 0.5rem; border: 2px solid #00d8ff;
-  }
   .testimonial .name { font-weight: 700; font-size: 1rem; color: #00e5ff; margin-bottom: 0.25rem; }
   .testimonial .result { font-weight: 600; font-size: 0.9rem; color: #a0f0ff; margin-bottom: 0.75rem; }
   .testimonial .quote { font-style: italic; font-size: 0.9rem; color: #cceeff; }
@@ -93,9 +119,7 @@
 
   /* Pricing */
   .pricing { max-width: 960px; margin: 0 auto 3rem; padding: 0 1rem; }
-  .pricing h3 {
-    font-size: 2rem; font-weight: 900; color: #00e5ff; text-align: center; margin-bottom: 1rem;
-  }
+  .pricing h3 { font-size: 2rem; font-weight: 900; color: #00e5ff; text-align: center; margin-bottom: 1rem; }
   .pricing-table { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; }
   .plan {
     background: #0f2027; border-radius: 12px; padding: 1.5rem 1.25rem; flex: 1 1 280px; max-width: 320px;
@@ -179,24 +203,35 @@
   @media (max-width: 768px) {
     .pricing-table { flex-direction: column; align-items: center; }
     .plan { max-width: 100%; }
+    .brand h1 { font-size: 1rem; }
+    #countdown { font-size: 1rem; }
   }
 </style>
 </head>
 <body>
 
 <header role="banner" aria-label="Site header with countdown timer">
-  <h1>AI Pioneer - Roast My Business Idea</h1>
-  <div id="countdown" aria-live="polite" aria-atomic="true" aria-label="Limited time offer countdown timer">23:59:59</div>
+  <div class="header-inner">
+    <a class="brand" href="/" aria-label="AI Pioneer Home">
+      <img src="/assets/ai-pioneer-logo.png" alt="AI Pioneer logo" />
+      <h1>AI Pioneer — Roast My Business</h1>
+    </a>
+    <div id="countdown" aria-live="polite" aria-atomic="true" aria-label="Limited time offer countdown timer">23:59:59</div>
+  </div>
 </header>
 
 <main class="container" role="main" aria-label="Main content">
 
- <!-- Hero Section -->
-<section class="hero" aria-labelledby="hero-title">
-  <h2 id="hero-title">Stop Getting Fake "That's a Great Idea!" Feedback</h2>
-  <p>Get BRUTALLY HONEST business reviews that actually help you succeed. Over 200+ entrepreneurs roasted and counting.</p>
-</section>
+  <!-- Hero Section -->
+  <section class="hero" aria-labelledby="hero-title">
+    <h2 id="hero-title">Stop Getting Fake "That's a Great Idea!" Feedback</h2>
+    <p>Get BRUTALLY HONEST business reviews that actually help you succeed. Over 200+ entrepreneurs roasted and counting.</p>
 
+    <!-- Static image (replacing video) -->
+    <div class="video-testimonial" aria-label="Customer testimonial image">
+      <img src="/assets/og-thumbnail.jpg" alt="Customer success testimonial" />
+    </div>
+  </section>
 
   <!-- Problem Agitation -->
   <section class="problem" aria-labelledby="problem-title">
@@ -215,19 +250,19 @@
   <!-- Social Proof Bar -->
   <section class="social-proof-bar" aria-label="Scrolling testimonials from entrepreneurs">
     <div class="testimonial" tabindex="0">
-      <div style="width: 56px; height: 56px; background: linear-gradient(45deg, #ff6600, #ff8533); border-radius: 50%; margin-bottom: 0.5rem; border: 2px solid #00d8ff; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 12px;">J</div>
+      <div style="width:56px;height:56px;background:linear-gradient(45deg,#ff6600,#ff8533);border-radius:50%;margin-bottom:0.5rem;border:2px solid #00d8ff;display:flex;align-items:center;justify-content:center;color:white;font-weight:bold;font-size:12px;">J</div>
       <div class="name">Jessica</div>
       <div class="result">Fitness app pivoted to $10K MRR in 3 months</div>
       <div class="quote">"The roast was brutal but exactly what I needed. It saved me months of wasted effort."</div>
     </div>
     <div class="testimonial" tabindex="0">
-      <div style="width: 56px; height: 56px; background: linear-gradient(45deg, #ff6600, #ff8533); border-radius: 50%; margin-bottom: 0.5rem; border: 2px solid #00d8ff; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 12px;">M</div>
+      <div style="width:56px;height:56px;background:linear-gradient(45deg,#ff6600,#ff8533);border-radius:50%;margin-bottom:0.5rem;border:2px solid #00d8ff;display:flex;align-items:center;justify-content:center;color:white;font-weight:bold;font-size:12px;">M</div>
       <div class="name">Mike</div>
       <div class="result">Doubled revenue after Growth Roast</div>
       <div class="quote">"The detailed roadmap gave me clarity and confidence to scale fast."</div>
     </div>
     <div class="testimonial" tabindex="0">
-      <div style="width: 56px; height: 56px; background: linear-gradient(45deg, #ff6600, #ff8533); border-radius: 50%; margin-bottom: 0.5rem; border: 2px solid #00d8ff; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 12px;">S</div>
+      <div style="width:56px;height:56px;background:linear-gradient(45deg,#ff6600,#ff8533);border-radius:50%;margin-bottom:0.5rem;border:2px solid #00d8ff;display:flex;align-items:center;justify-content:center;color:white;font-weight:bold;font-size:12px;">S</div>
       <div class="name">Sara</div>
       <div class="result">Avoided costly mistakes, launched successfully</div>
       <div class="quote">"I wish I had done this sooner. The honest feedback was a game changer."</div>
@@ -378,7 +413,7 @@
   <p><a href="/terms">Terms</a> | <a href="/privacy">Privacy</a></p>
 </footer>
 
-<!-- Live countdown script (24h from page load) -->
+<!-- Live countdown (24h from page load) -->
 <script>
 (function startCountdown(hours) {
   const endTime = Date.now() + hours * 60 * 60 * 1000;
