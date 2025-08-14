@@ -21,10 +21,8 @@
   a:hover, a:focus { text-decoration: underline; }
   img { max-width: 100%; height: auto; display: block; }
   button, .btn {
-    cursor: pointer;
-    border: none; border-radius: 6px;
-    font-weight: 700;
-    transition: background-color 0.3s ease;
+    cursor: pointer; border: none; border-radius: 6px;
+    font-weight: 700; transition: background-color 0.3s ease;
     display: inline-block; text-align: center; user-select: none;
   }
   .sr-only {
@@ -59,7 +57,6 @@
   .video-testimonial {
     max-width: 720px; margin: 0 auto 2rem; border-radius: 12px; overflow: hidden; box-shadow: 0 0 20px #00d8ff88;
   }
-  .video-testimonial video { width: 100%; height: auto; display: block; }
 
   /* Problem */
   .problem {
@@ -198,12 +195,10 @@
   <section class="hero" aria-labelledby="hero-title">
     <h2 id="hero-title">Stop Getting Fake "That's a Great Idea!" Feedback</h2>
     <p>Get BRUTALLY HONEST business reviews that actually help you succeed. Over 200+ entrepreneurs roasted and counting.</p>
-    <div class="video-testimonial" aria-label="Video testimonial from a successful entrepreneur">
-      <video controls preload="metadata" poster="https://aipioneerai.com/assets/testimonial-poster.jpg" aria-describedby="video-desc">
-        <source src="https://aipioneerai.com/assets/testimonial-video.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <p id="video-desc" class="sr-only">Video testimonial from Jessica, who pivoted her fitness app idea after a roast and hit $10K MRR in 3 months.</p>
+
+    <!-- Replaced video with a static image to keep layout -->
+    <div class="video-testimonial" aria-label="Customer testimonial image">
+      <img src="https://aipioneerai.com/assets/testimonial-poster.jpg" alt="Happy customer testimonial" />
     </div>
   </section>
 
@@ -340,7 +335,7 @@
       <p>Honest but constructive. Think of it like your brutally honest best friend rooting for your success.</p>
     </details>
 
-    <details class="faq-item>
+    <details class="faq-item">
       <summary>How fast do I get results?</summary>
       <p>Delivery times range from 12 to 48 hours depending on the roast tier you choose.</p>
     </details>
@@ -391,28 +386,23 @@
 <script>
 (function startCountdown(hours) {
   const endTime = Date.now() + hours * 60 * 60 * 1000;
-
   function tick() {
     const t = endTime - Date.now();
     const elTop = document.getElementById('countdown');
     const elPrice = document.getElementById('price-increase-timer');
-
     if (t <= 0) {
       if (elTop) elTop.textContent = '00:00:00';
       if (elPrice) elPrice.textContent = '00:00:00';
       clearInterval(timer);
       return;
     }
-
     const h = String(Math.floor((t / (1000 * 60 * 60)) % 24)).padStart(2, '0');
     const m = String(Math.floor((t / (1000 * 60)) % 60)).padStart(2, '0');
     const s = String(Math.floor((t / 1000) % 60)).padStart(2, '0');
     const val = `${h}:${m}:${s}`;
-
     if (elTop) elTop.textContent = val;
     if (elPrice) elPrice.textContent = val;
   }
-
   tick();
   const timer = setInterval(tick, 1000);
 })(24);
