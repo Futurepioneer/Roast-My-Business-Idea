@@ -39,6 +39,19 @@
     cursor: pointer; border: none; border-radius: 6px;
     font-weight: 700; transition: background-color 0.3s ease;
     display: inline-block; text-align: center; user-select: none;
+    min-height: 44px; /* touch-friendly minimum height */
+    padding-left: 1.25rem; padding-right: 1.25rem;
+    line-height: 1.2;
+  }
+  .btn-primary {
+    background: #00d8ff; color: #0f2027; font-size: 1.1rem; border-radius: 8px; font-weight: 900;
+    box-shadow: 0 4px 12px #00d8ffaa; transition: background-color 0.3s ease; text-align: center; user-select: none;
+    min-height: 44px; /* touch-friendly */
+    padding: 0.75rem 1.25rem;
+  }
+  .btn-primary:hover, .btn-primary:focus {
+    background: #00aacc; color: #e0f7ff;
+    outline-offset: 2px;
   }
   .sr-only {
     position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px;
@@ -139,9 +152,20 @@
   .btn-primary {
     background: #00d8ff; color: #0f2027; font-size: 1.1rem; padding: 0.75rem 1.25rem; border-radius: 8px; font-weight: 900;
     box-shadow: 0 4px 12px #00d8ffaa; transition: background-color 0.3s ease; text-align: center; user-select: none;
+    min-height: 44px; /* touch-friendly */
   }
   .btn-primary:hover, .btn-primary:focus { background: #00aacc; color: #e0f7ff; }
   .payment-plan { font-size: 0.9rem; color: #88dfff; margin-top: -1rem; margin-bottom: 1rem; font-style: italic; }
+
+  /* Add trust signals near Stripe buttons */
+  .btn-primary + .trust-signal {
+    display: block;
+    font-size: 0.85rem;
+    color: #00e5ff;
+    font-weight: 700;
+    margin-top: 0.25rem;
+    user-select: none;
+  }
 
   /* Comparison Table */
   .comparison-table { width: 100%; border-collapse: collapse; margin-top: 1rem; color: #cceeff; }
@@ -184,7 +208,7 @@
   }
   .final-cta h3 { font-size: 2rem; font-weight: 900; color: #0f2027; margin-bottom: 1rem; }
   .final-cta p { font-size: 1.2rem; color: #0f2027dd; margin-bottom: 2rem; }
-  .final-cta .btn-primary { font-size: 1.3rem; padding: 1rem 2rem; box-shadow: 0 6px 20px #004f5acc; }
+  .final-cta .btn-primary { font-size: 1.3rem; padding: 1rem 2rem; box-shadow: 0 6px 20px #004f5acc; min-height: 44px; }
 
   /* Sticky CTA Button */
   .sticky-cta {
@@ -199,12 +223,37 @@
   footer { text-align: center; font-size: 0.85rem; color: #88dfffaa; margin-bottom: 2rem; }
   footer a { color: #00d8ffcc; }
 
-  /* Responsive */
+  /* Footer styling additions */
+  footer {
+    background: #0f2027;
+    padding: 1rem 0;
+    box-shadow: inset 0 1px 5px #00d8ff44;
+  }
+
+  /* TikTok traffic conversion styles */
+  /* Example: larger buttons, bright accent for mobile */
+  .btn-primary {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Mobile responsiveness and touch improvements */
   @media (max-width: 768px) {
     .pricing-table { flex-direction: column; align-items: center; }
     .plan { max-width: 100%; }
     .brand h1 { font-size: 1rem; }
     #countdown { font-size: 1rem; }
+    button, .btn, .btn-primary {
+      min-height: 48px;
+      font-size: 1.15rem;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+      border-radius: 10px;
+    }
+    .trust-badges {
+      gap: 1rem;
+      justify-content: center;
+    }
   }
 </style>
 </head>
@@ -310,6 +359,7 @@
           <li>48-hour delivery</li>
         </ul>
         <button class="btn-primary" onclick="location.href='https://buy.stripe.com/eVq3cuh1w06Afrq3tM2Nq02'" aria-label="Buy Starter Roast for $29">Get Starter Roast</button>
+        <span class="trust-signal" aria-hidden="true">✅ Secure Payment</span>
       </article>
 
       <article class="plan popular" role="listitem" aria-labelledby="growth-title">
@@ -325,6 +375,7 @@
         </ul>
         <p class="payment-plan">Or 3 payments of $35/mo</p>
         <button class="btn-primary" onclick="location.href='https://buy.stripe.com/cNidR88v0g5ybba4xQ2Nq01'" aria-label="Buy Growth Roast for $99">Get Growth Roast</button>
+        <span class="trust-signal" aria-hidden="true">✅ Secure Payment</span>
       </article>
 
       <article class="plan" role="listitem" aria-labelledby="scale-title">
@@ -340,6 +391,7 @@
         </ul>
         <p class="payment-plan">Or 6 payments of $45/mo</p>
         <button class="btn-primary" onclick="location.href='https://buy.stripe.com/8x228q6mSf1u1AA9Sa2Nq00'" aria-label="Buy Scale Roast for $249">Get Scale Roast</button>
+        <span class="trust-signal" aria-hidden="true">✅ Secure Payment</span>
       </article>
     </div>
   </section>
@@ -347,6 +399,8 @@
   <!-- Risk Reversal -->
   <section class="risk-reversal" aria-labelledby="guarantee-title">
     <h3 id="guarantee-title">100% Money-Back Guarantee</h3>
+    <p>🔒 30-Day Money-Back Guarantee</p>
+    <p>⚡ Instant Delivery</p>
     <p>If your roast doesn't give you at least 3 actionable insights to improve your business, you get every penny back — no questions asked.</p>
     <p>Plus, your payment is secured with industry-leading encryption and trusted payment processors.</p>
   </section>
@@ -355,6 +409,7 @@
   <section class="urgency" aria-live="assertive" aria-atomic="true" aria-label="Limited spots and countdown urgency">
     <p><strong>⚠️ LIMITED OFFER:</strong> Only <span id="spots-remaining" aria-live="polite" aria-atomic="true">10</span> new roasts accepted this week. When they're gone, they're gone.</p>
     <p>Next price increase in: <span id="price-increase-timer" aria-live="polite" aria-atomic="true">Loading...</span></p>
+    <p>🔥 Join 200+ satisfied customers</p>
   </section>
 
   <!-- FAQ Section -->
@@ -392,6 +447,7 @@
     <h3>Ready to Stop Playing Small and Start Winning?</h3>
     <p>Claim your brutally honest business roast now. Only a few spots left this week!</p>
     <button class="btn-primary" id="final-cta-btn" onclick="location.href='https://buy.stripe.com/eVq3cuh1w06Afrq3tM2Nq02'" aria-label="Get your business roast now">Get Roasted Now</button>
+    <span class="trust-signal" aria-hidden="true">✅ Secure Payment</span>
   </section>
 
   <!-- Trust Badges -->
@@ -439,5 +495,35 @@
 })(24);
 </script>
 
+<!-- Shared footer script injection -->
+<script>
+  // Example shared footer script for analytics or chat widget
+  (function(){
+    // Insert your shared footer script here
+    // For example, a simple console log to indicate script loaded
+    console.log('Shared footer script loaded.');
+  })();
+</script>
+
 </body>
 </html>
+
+### 2. NEW FOOTER.HTML FILE
+Create a new file `/footer.html` in your repo root:
+
+```html
+<footer class="site-footer">
+    <div class="footer-content">
+        <p>&copy; 2025 Roast My Business. All rights reserved.</p>
+        <p class="footer-links">
+            <a href="/terms.html">Terms of Service</a> | 
+            <a href="/privacy.html">Privacy Policy</a> | 
+            <a href="/refund.html">Refund Policy</a> | 
+            <a href="/disclaimer.html">Disclaimer</a>
+        </p>
+        <p class="footer-contact">
+            <a href="mailto:support@roastyourbiz.com">support@roastyourbiz.com</a>
+        </p>
+        <p class="footer-tagline">🔥 Get roasted. Get better. Get results.</p>
+    </div>
+</footer>
