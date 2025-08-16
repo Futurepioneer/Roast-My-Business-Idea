@@ -46,7 +46,42 @@
     header{position:sticky;top:0;background:rgba(17,24,39,.7);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--border);z-index:50}
     .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
     .logo{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.6px}
-    .logo img{height:28px;width:auto;display:block}
+  /* ===== HEADER LOGO ===== */
+.logo {
+  display:flex;
+  align-items:center;     /* vertically center with nav */
+  gap:12px;               /* spacing between logo and text if any */
+}
+
+.logo img {
+  height:56px;            /* bigger for visibility */
+  width:auto;
+  display:block;
+  margin:4px 0;           /* balances vertical spacing */
+}
+
+/* Smaller on mobile */
+@media (max-width:900px){
+  .logo img { height:44px; }
+}
+
+/* ===== FOOTER LOGO ===== */
+footer .logo {
+  display:flex;
+  align-items:center;     /* center in footer too */
+  gap:10px;
+}
+
+footer .logo img {
+  height:46px;            /* slightly smaller than header */
+  width:auto;
+  display:block;
+  margin:6px 0;
+}
+
+    
+header .nav{ padding-top:6px; padding-bottom:6px; } /* centers it better */
+
     .hero{display:grid;grid-template-columns:1.1fr 0.9fr;gap:28px;align-items:center;padding:48px 28px}
     .hero h1{font-size:clamp(32px,4.2vw,52px);line-height:1.1;margin:0 0 12px}
     .sub{font-size:clamp(16px,2vw,19px);color:var(--muted);margin:0 0 18px}
