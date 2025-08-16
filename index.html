@@ -1,272 +1,301 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>AI Pioneer — Brutally Honest Business Roasts That Make You Money</title>
-  <meta name="description" content="Stop wasting months building a business nobody wants. Get brutally honest, expert business reviews with actionable roadmaps. Limited spots weekly." />
+  <!-- ===== BASIC ===== -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Roast Your Biz — Brutally Honest Business Roast That Makes You Money</title>
+  <meta name="description" content="Stop guessing. Get a no-BS business roast with an action plan in 12–48 hours. 100% money-back guarantee." />
+  <link rel="canonical" href="https://www.roastyourbiz.com/" />
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="/assets/AI_Pioneer_Thumbnail_512.png" />
-  <link rel="apple-touch-icon" href="/assets/AI_Pioneer_Thumbnail_512.png" />
-  <link rel="shortcut icon" type="image/png" href="/assets/AI_Pioneer_Thumbnail_512.png" />
+  <!-- Perf: warm up third-parties -->
+  <link rel="preconnect" href="https://checkout.stripe.com" crossorigin>
+  <link rel="preconnect" href="https://analytics.tiktok.com" crossorigin>
 
+  <!-- Favicon (optional if you add one later) -->
+  <link rel="icon" href="/favicon.ico">
+
+  <!-- ===== THEME (AI Pioneer brand colors) ===== -->
+  <meta name="theme-color" content="#4f46e5" />
   <style>
-    /* Reset & base */
-    *,*::before,*::after{box-sizing:border-box}
-    body{margin:0;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
-      background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);color:#f0f0f0;line-height:1.6}
-    a{color:#00d8ff;text-decoration:none} a:hover{text-decoration:underline}
-    img{max-width:100%;height:auto;display:block}
-    .container{max-width:960px;margin:0 auto;padding:0 1rem 3rem}
-
-    /* Header */
-    header{position:sticky;top:0;left:0;right:0;background:linear-gradient(90deg,#0f2027,#203a43);
-      padding:.75rem 1rem;z-index:9999;box-shadow:0 2px 8px rgba(0,0,0,.7)}
-    .header-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem}
-    .brand{display:inline-flex;align-items:center;gap:.75rem}
-    .brand img{width:42px;height:42px;object-fit:contain;filter:drop-shadow(0 0 6px rgba(0,216,255,.45))}
-    .brand h1{font-size:1.15rem;margin:0;font-weight:900;color:#00d8ff;letter-spacing:.3px}
-    #countdown{font-family:'Courier New',Courier,monospace;font-weight:700;font-size:1.05rem;color:#ff4c4c;
-      background:#1b1b1b;padding:.35rem .75rem;border-radius:6px;user-select:none;min-width:110px;text-align:center}
-
-    /* Hero */
-    .hero{text-align:center;padding:3rem 1rem 1rem}
-    .hero h2{font-size:2.5rem;font-weight:900;margin:0 0 .5rem;color:#00e5ff;text-shadow:0 0 8px #00e5ff88}
-    .hero p{font-size:1.2rem;max-width:640px;margin:.5rem auto 0;color:#cceeff}
-
-    /* Sections */
-    .card{background:#111a22cc;border-radius:12px;padding:2rem 1.5rem;margin:2rem auto;max-width:720px}
-    .card h3{font-size:1.75rem;font-weight:800;margin:0 0 1rem}
-    .card p{font-size:1.05rem;color:#eee;margin:.6rem 0}
-
-    /* Social proof (text only) */
-    .sp{background:linear-gradient(90deg,#203a43,#2c5364);padding:1rem;border-radius:12px;margin:2rem auto;
-      box-shadow:0 0 15px #00d8ff55 inset;max-width:960px}
-    .sp-grid{display:flex;gap:.75rem;overflow-x:auto}
-    .sp-card{flex:0 0 280px;background:#0f2027;border-radius:12px;padding:1rem;box-shadow:0 0 10px #00d8ff88}
-    .sp-name{font-weight:700;color:#00e5ff;margin:.25rem 0}
-    .sp-result{font-weight:600;color:#a0f0ff;margin:.25rem 0}
-    .sp-quote{font-style:italic;color:#cceeff}
-
-    /* Pricing */
-    .pricing{max-width:960px;margin:0 auto 2.5rem;padding:0 1rem}
-    .pricing h3{font-size:2rem;font-weight:900;color:#00e5ff;text-align:center;margin:1rem 0}
-    .pricing-table{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center}
-    .plan{background:#0f2027;border-radius:12px;padding:1.25rem;flex:1 1 280px;max-width:320px;
-      box-shadow:0 0 15px #00d8ff88;display:flex;flex-direction:column}
-    .plan.popular{border:3px solid #00e5ff;box-shadow:0 0 25px #00e5ffcc;position:relative}
-    .badge{position:absolute;top:-12px;right:-12px;background:#00e5ff;color:#0f2027;font-weight:900;
-      font-size:.85rem;padding:.25rem .7rem;border-radius:12px}
-    .plan h4{font-size:1.4rem;color:#00d8ff;margin:.25rem 0 .5rem}
-    .price{font-size:2rem;font-weight:900;color:#00e5ff;margin:0 0 1rem}
-    .plan ul{list-style:none;margin:0 0 1rem 0;padding:0;color:#a0f0ff}
-    .plan ul li{margin:.45rem 0;padding-left:1.15rem;position:relative}
-    .plan ul li::before{content:"✓";position:absolute;left:0;color:#00e5ff;font-weight:900}
-    .btn{cursor:pointer;border:none;border-radius:8px;font-weight:900;display:inline-block;text-align:center;
-      background:#00d8ff;color:#0f2027;font-size:1.1rem;padding:.8rem 1.25rem;min-height:44px}
-    .btn:hover,.btn:focus{background:#00aacc;color:#e0f7ff}
-    .sub{font-size:.9rem;color:#88dfff;margin:.5rem 0 0}
-
-    /* Final CTA & trust */
-    .final{background:linear-gradient(135deg,#00d8ff,#005f73);border-radius:12px;padding:2rem 1.5rem;
-      max-width:720px;margin:0 auto 3rem;text-align:center;box-shadow:0 0 30px #00d8ffcc}
-    .final h3{font-size:2rem;font-weight:900;color:#0f2027;margin:0 0 1rem}
-    .final p{font-size:1.15rem;color:#0f2027dd;margin:0 0 1.5rem}
-    .trust{display:flex;justify-content:center;gap:2rem;margin:0 auto 2rem;flex-wrap:wrap}
-    .trust .item{display:flex;align-items:center;gap:.5rem;color:#00d8ff;font-weight:700;font-size:.95rem}
-
-    /* Footer */
-    footer{text-align:center;font-size:.85rem;color:#88dfffaa;margin:0;background:#0f2027;padding:1rem 0;
-      box-shadow:inset 0 1px 5px #00d8ff44}
-    footer a{color:#00d8ffcc}
-
-    /* Responsive */
-    @media (max-width:768px){
-      .brand h1{font-size:1rem}
-      #countdown{font-size:1rem}
-      .pricing-table{flex-direction:column;align-items:center}
-      .plan{max-width:100%}
-      .btn{min-height:48px;font-size:1.15rem;border-radius:10px}
+    :root{
+      --brand:#4f46e5;       /* AI Pioneer primary (adjust when you have exact hex) */
+      --brand-600:#4338ca;   /* darker shade for gradient */
+      --accent:#f59e0b;      /* flame accent */
+      --bg:#0b0b12;
+      --text:#f1f5f9;
+      --muted:#a1a1aa;
+      --card:#11121a;
+      --success:#22c55e;
+      --danger:#ef4444;
+      --border:#232433;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+      --radius:14px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%;background:var(--bg);color:var(--text);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji"}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1100px;margin:0 auto;padding:28px}
+    .btn{display:inline-block;padding:14px 18px;border-radius:12px;font-weight:700;letter-spacing:.2px}
+    .btn-primary{background:linear-gradient(135deg,var(--brand),var(--brand-600));box-shadow:var(--shadow)}
+    .btn-primary:hover{filter:brightness(1.05)}
+    .btn-ghost{border:1px solid var(--border);background:transparent}
+    header{position:sticky;top:0;background:rgba(11,11,18,.7);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--border);z-index:50}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .logo{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.6px}
+    .logo img{height:28px;width:auto;display:block}
+    .hero{display:grid;grid-template-columns:1.1fr 0.9fr;gap:28px;align-items:center;padding:48px 28px}
+    .hero h1{font-size:clamp(32px,4.2vw,52px);line-height:1.1;margin:0 0 12px}
+    .sub{font-size:clamp(16px,2vw,19px);color:var(--muted);margin:0 0 18px}
+    .chips{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 22px}
+    .chip{background:#161824;border:1px solid var(--border);padding:8px 10px;border-radius:999px;font-size:13px}
+    .hero-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+    .slots{font-weight:700;margin-bottom:10px}
+    .count{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#0f1220;border:1px solid var(--border);padding:10px 12px;border-radius:10px;display:inline-block}
+    .pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:26px 0}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:18px;display:flex;flex-direction:column}
+    .price{font-size:28px;font-weight:900;margin:10px 0}
+    .guarantee{color:var(--success);font-weight:700;margin-top:auto}
+    .cta{margin-top:16px}
+    .cta .btn{width:100%;text-align:center}
+    .section{padding:28px}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .proof{display:grid;gap:14px}
+    .proof .item{border:1px dashed var(--border);border-radius:12px;padding:14px;background:#0f1220}
+    .faq details{background:#0f1220;border:1px solid var(--border);padding:14px;border-radius:12px}
+    .faq details+details{margin-top:10px}
+    footer{border-top:1px solid var(--border);color:var(--muted)}
+    @media (max-width: 900px){
+      .hero{grid-template-columns:1fr}
+      .pricing{grid-template-columns:1fr}
+      .grid-2{grid-template-columns:1fr}
     }
   </style>
-</head>
-<body>
 
-<header role="banner" aria-label="Site header with countdown timer">
-  <div class="header-inner">
-    <a class="brand" href="/" aria-label="AI Pioneer Home">
-      <img src="/assets/AI_Pioneer_Main_Logo.png" alt="AI Pioneer logo" />
-      <h1>AI Pioneer — Roast My Business</h1>
-    </a>
-    <div id="countdown" aria-live="polite" aria-atomic="true">23:59:59</div>
-  </div>
-</header>
+  <!-- ===== OPEN GRAPH / TWITTER ===== -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Roast Your Biz — Brutal Business Roast, Real Results">
+  <meta property="og:description" content="Brutally honest feedback + a step-by-step plan. 12–48 hour delivery. Money-back guarantee.">
+  <meta property="og:image" content="https://www.roastyourbiz.com/assets/og-roast.jpg" />
+  <meta property="og:url" content="https://www.roastyourbiz.com/" />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Roast Your Biz — Brutal Business Roast">
+  <meta name="twitter:description" content="Stop wasting months. Get a no-BS roast + action plan.">
+  <meta name="twitter:image" content="https://www.roastyourbiz.com/assets/og-roast.jpg" />
 
-<main class="container" role="main" aria-label="Main content">
-  <!-- Hero -->
-  <section class="hero" aria-labelledby="hero-title">
-    <h2 id="hero-title">Stop Getting Fake "That's a Great Idea!" Feedback</h2>
-    <p>Get BRUTALLY HONEST business reviews that actually help you succeed. Over 200+ entrepreneurs roasted and counting.</p>
-  </section>
-
-  <!-- Problem -->
-  <section class="card" aria-labelledby="problem-title">
-    <h3 id="problem-title">Why Most Entrepreneurs Fail Before They Start</h3>
-    <p>Friends and family say your idea is "amazing" but deep down you know something's wrong. You're wasting months building something nobody wants.</p>
-    <p>Without brutally honest feedback, you risk: burning cash on dead-end ideas, missing critical blind spots, and launching to silence.</p>
-  </section>
-
-  <!-- Solution -->
-  <section class="card" aria-labelledby="solution-title">
-    <h3 id="solution-title">The Brutally Honest Business Roasting Service You Can Trust</h3>
-    <p>With over 200 entrepreneurs roasted, AI Pioneer delivers no-fluff, expert business reviews that expose your blind spots and give you a clear, actionable roadmap to success.</p>
-  </section>
-
-  <!-- Social Proof (text only) -->
-  <section class="sp" aria-label="Results from real entrepreneurs">
-    <div class="sp-grid" role="list">
-      <article class="sp-card" role="listitem">
-        <div class="sp-name">Jessica — Fitness App</div>
-        <div class="sp-result">Pivoted to $10K MRR in 3 months</div>
-        <div class="sp-quote">“Brutal but exactly what I needed. Saved me months.”</div>
-      </article>
-      <article class="sp-card" role="listitem">
-        <div class="sp-name">Mike — Local Services</div>
-        <div class="sp-result">Doubled revenue after Growth Roast</div>
-        <div class="sp-quote">“The roadmap gave me clarity and confidence to scale fast.”</div>
-      </article>
-      <article class="sp-card" role="listitem">
-        <div class="sp-name">Sara — E-commerce</div>
-        <div class="sp-result">Avoided costly mistakes, launched successfully</div>
-        <div class="sp-quote">“I wish I had done this sooner. Total game changer.”</div>
-      </article>
-    </div>
-  </section>
-
-  <!-- Pricing -->
-  <section class="pricing" aria-labelledby="pricing-title">
-    <h3 id="pricing-title">Choose Your Roast Level & Start Winning</h3>
-    <div class="pricing-table">
-
-      <article class="plan" aria-labelledby="starter-title">
-        <h4 id="starter-title">🔥 Starter Roast</h4>
-        <div class="price" aria-label="Price twenty nine dollars">$29</div>
-        <ul>
-          <li>Brutally honest 2-page review</li>
-          <li>3 specific action items</li>
-          <li>48-hour delivery</li>
-        </ul>
-        <button class="btn" onclick="location.href='https://buy.stripe.com/eVq3cuh1w06Afrq3tM2Nq02'">Get Starter Roast</button>
-        <p class="sub">✅ Secure payment via Stripe</p>
-      </article>
-
-      <article class="plan popular" aria-labelledby="growth-title">
-        <div class="badge" aria-hidden="true">Most Popular</div>
-        <h4 id="growth-title">🚀 Growth Roast</h4>
-        <div class="price" aria-label="Price ninety nine dollars">$99</div>
-        <ul>
-          <li>8-page strategic review</li>
-          <li>Market & competition research</li>
-          <li>Complete go-to-market plan</li>
-          <li>24-hour delivery</li>
-        </ul>
-        <p class="sub"><em>Or 3 payments of $35/mo</em></p>
-        <button class="btn" onclick="location.href='https://buy.stripe.com/cNidR88v0g5ybba4xQ2Nq01'">Get Growth Roast</button>
-        <p class="sub">✅ Secure payment via Stripe</p>
-      </article>
-
-      <article class="plan" aria-labelledby="scale-title">
-        <h4 id="scale-title">⚡ Scale Roast</h4>
-        <div class="price" aria-label="Price two hundred forty nine dollars">$249</div>
-        <ul>
-          <li>15-page transformation plan</li>
-          <li>Revenue optimization strategy</li>
-          <li>90-day action roadmap</li>
-          <li>12-hour priority delivery</li>
-          <li>15-minute strategy call</li>
-        </ul>
-        <p class="sub"><em>Or 6 payments of $45/mo</em></p>
-        <button class="btn" onclick="location.href='https://buy.stripe.com/8x228q6mSf1u1AA9Sa2Nq00'">Get Scale Roast</button>
-        <p class="sub">✅ Secure payment via Stripe</p>
-      </article>
-
-    </div>
-  </section>
-
-  <!-- Risk Reversal -->
-  <section class="card" aria-labelledby="guarantee-title" style="text-align:center">
-    <h3 id="guarantee-title">100% Money-Back Guarantee</h3>
-    <p>🔒 30-Day Money-Back Guarantee • ⚡ Fast Delivery</p>
-    <p>If your roast doesn’t give you at least 3 actionable insights, you get every penny back—no questions asked.</p>
-  </section>
-
-  <!-- Urgency -->
-  <section class="card" aria-live="assertive" aria-atomic="true" style="text-align:center;box-shadow:0 0 20px #ff4c4cbb;background:#ff4c4ccc;color:#fff">
-    <p><strong>⚠️ LIMITED OFFER:</strong> Only <span id="spots-remaining">10</span> new roasts accepted this week.</p>
-    <p>Next price increase in: <span id="price-increase-timer">Loading…</span></p>
-    <p>🔥 Join 200+ satisfied customers</p>
-  </section>
-
-  <!-- FAQ -->
-  <section class="card" aria-labelledby="faq-title" style="max-width:720px">
-    <h3 id="faq-title" style="text-align:center;color:#00e5ff">Frequently Asked Questions</h3>
-    <details style="margin-bottom:1rem" open>
-      <summary style="cursor:pointer;background:#0f2027;border-radius:8px;color:#00d8ff;padding:.5rem 1rem;font-weight:700">How brutal are these roasts?</summary>
-      <p style="margin:.5rem 1rem 0">Honest but constructive. Think brutally honest best friend who wants you to win.</p>
-    </details>
-    <details style="margin-bottom:1rem">
-      <summary style="cursor:pointer;background:#0f2027;border-radius:8px;color:#00d8ff;padding:.5rem 1rem;font-weight:700">How fast do I get results?</summary>
-      <p style="margin:.5rem 1rem 0">12–48 hours depending on tier.</p>
-    </details>
-    <details style="margin-bottom:1rem">
-      <summary style="cursor:pointer;background:#0f2027;border-radius:8px;color:#00d8ff;padding:.5rem 1rem;font-weight:700">Is payment secure?</summary>
-      <p style="margin:.5rem 1rem 0">Yes—Stripe handles all payments with full encryption.</p>
-    </details>
-  </section>
-
-  <!-- Final CTA -->
-  <section class="final" aria-label="Final call to action">
-    <h3>Ready to Stop Playing Small and Start Winning?</h3>
-    <p>Claim your brutally honest business roast now. Only a few spots left this week!</p>
-    <button class="btn" onclick="location.href='https://buy.stripe.com/eVq3cuh1w06Afrq3tM2Nq02'">Get Roasted Now</button>
-  </section>
-
-  <!-- Trust badges -->
-  <div class="trust" aria-label="Trust and security badges">
-    <div class="item">🛡️ 100% Money-Back Guarantee</div>
-    <div class="item">🔒 Secure Payment via Stripe</div>
-  </div>
-
-</main>
-
-<footer>
-  <p>&copy; 2025 AI Pioneer. All rights reserved.</p>
-  <p><a href="/terms.html">Terms of Service</a> | <a href="/privacy.html">Privacy Policy</a> | <a href="/refund.html">Refund Policy</a> | <a href="/disclaimer.html">Disclaimer</a></p>
-  <p><a href="mailto:support@roastyourbiz.com">support@roastyourbiz.com</a></p>
-</footer>
-
-<!-- Live countdown (24h from page load) -->
-<script>
-(function startCountdown(hours){
-  const endTime = Date.now() + hours*60*60*1000;
-  function tick(){
-    const t = endTime - Date.now();
-    const top = document.getElementById('countdown');
-    const price = document.getElementById('price-increase-timer');
-    if(t<=0){ if(top) top.textContent='00:00:00'; if(price) price.textContent='00:00:00'; clearInterval(timer); return; }
-    const h = String(Math.floor((t/36e5)%24)).padStart(2,'0');
-    const m = String(Math.floor((t/6e4)%60)).padStart(2,'0');
-    const s = String(Math.floor((t/1e3)%60)).padStart(2,'0');
-    const v = `${h}:${m}:${s}`;
-    if(top) top.textContent = v;
-    if(price) price.textContent = v;
+  <!-- ===== SCHEMA.ORG PRODUCT (3 tiers) ===== -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Product",
+    "name":"Roast Your Biz",
+    "brand":{"@type":"Brand","name":"AI Pioneer"},
+    "description":"Brutal business roast with an action plan in 12–48 hours.",
+    "isRelatedTo":[
+      {"@type":"Product","name":"Starter Roast","offers":{"@type":"Offer","price":"29","priceCurrency":"USD","availability":"https://schema.org/InStock"}},
+      {"@type":"Product","name":"Growth Roast","offers":{"@type":"Offer","price":"99","priceCurrency":"USD","availability":"https://schema.org/InStock"}},
+      {"@type":"Product","name":"Scale Roast","offers":{"@type":"Offer","price":"249","priceCurrency":"USD","availability":"https://schema.org/InStock"}}
+    ]
   }
-  tick();
-  const timer = setInterval(tick,1000);
-})(24);
-</script>
+  </script>
 
+  <!-- ===== TikTok Pixel (YOUR ID inserted) ===== -->
+  <script>
+  !function (w, d, t) {
+    w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+    ttq.load('D2FRFOBC77U9PLHEKVDG'); ttq.page();
+  }(window, document, 'ttq');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://analytics.tiktok.com/i18n/pixel/D2FRFOBC77U9PLHEKVDG?sdkid=D2FRFOBC77U9PLHEKVDG&event=PageView"
+    alt=""/></noscript>
+</head>
+
+<body>
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="container nav" role="navigation" aria-label="Primary">
+      <div class="logo" aria-label="Roast Your Biz">
+        <img src="assets/RoastYourBiz_Logo.png" alt="Roast Your Biz Logo">
+      </div>
+      <nav>
+        <a href="#pricing" class="btn btn-ghost" aria-label="Jump to pricing">Pricing</a>
+        <a href="#faq" class="btn btn-ghost" aria-label="Jump to FAQ">FAQ</a>
+        <a href="#pricing" class="btn btn-primary" aria-label="See pricing and purchase">Get Roasted</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero container">
+    <div>
+      <h1>Your idea isn’t “great.” It’s <span style="color:var(--accent)">untested</span>.<br/>Get a brutal roast that saves you months and makes you money.</h1>
+      <p class="sub">200+ entrepreneurs roasted. 12–48 hour delivery. <b>100% money-back guarantee.</b></p>
+      <div class="chips" aria-label="Proof points">
+        <span class="chip">★ $8k/mo in 30 days after homepage fix</span>
+        <span class="chip">★ $10k MRR in 3 months after pivot</span>
+        <span class="chip">★ “Finally, the truth” — real testimonials</span>
+      </div>
+      <div class="cta">
+        <a href="#pricing" class="btn btn-primary" aria-label="See pricing">See Pricing</a>
+        <a href="#proof" class="btn btn-ghost" style="margin-left:8px" aria-label="See results">See Results</a>
+      </div>
+    </div>
+
+    <div class="hero-card" aria-live="polite">
+      <div class="slots">⚠️ Only 10 new roasts accepted this week.</div>
+      <div>Next reset in: <span id="countdown" class="count">--:--:--</span></div>
+      <div style="margin-top:14px;color:var(--muted);font-size:14px">Spots reset Mondays at 9:00 AM ET.</div>
+    </div>
+  </section>
+
+  <!-- ===== PROOF / HOW IT WORKS ===== -->
+  <section id="proof" class="section container grid-2" aria-label="Results and how it works">
+    <div class="proof">
+      <div class="item"><b>Before → After</b><br/> We ripped out 3 conversion killers on a homepage. <b>$8k/mo</b> in 30 days.</div>
+      <div class="item"><b>Offer Pivot</b><br/> They sold what the market wanted, not what they liked. <b>$10k MRR</b> in 3 months.</div>
+      <div class="item"><b>Retention Fix</b><br/> Built simple follow-ups + loyalty. <b>Repeat sales up 41%</b>.</div>
+    </div>
+    <div class="proof">
+      <div class="item"><b>What you get</b><br/> A ruthless video roast + 1-page action plan with exact fixes.</div>
+      <div class="item"><b>Timeline</b><br/> Starter in 48h • Growth in 24h • Scale in 12h</div>
+      <div class="item"><b>Guarantee</b><br/> Not useful? Get <b>100% of your money back</b>. No drama.</div>
+    </div>
+  </section>
+
+  <!-- ===== PRICING ===== -->
+  <section id="pricing" class="section container" aria-label="Pricing">
+    <h2 style="margin:0 0 8px">Pick your roast. Get the plan. Make the money.</h2>
+    <p class="sub">Every tier is backed by our <b>100% money-back guarantee</b>.</p>
+
+    <div class="pricing">
+      <!-- STARTER -->
+      <article class="card" aria-labelledby="starter">
+        <h3 id="starter">Starter Roast</h3>
+        <p>Quick gut-check for your idea/site. Perfect if you want the harsh truth fast.</p>
+        <div class="price">$29</div>
+        <ul style="margin:0 0 10px;padding-left:18px">
+          <li>5–7 minute roast video</li>
+          <li>Top 3 fixes to make now</li>
+          <li>Delivery: within 48 hours</li>
+        </ul>
+        <div class="guarantee">100% money-back guarantee</div>
+        <div class="cta">
+          <a class="btn btn-primary cta-link"
+             href="https://buy.stripe.com/eVq3cuh1w06Afrq3tM2Nq02"
+             data-plan="starter" aria-label="Buy Starter Roast">Get Starter Roast</a>
+        </div>
+      </article>
+
+      <!-- GROWTH -->
+      <article class="card" aria-labelledby="growth">
+        <h3 id="growth">Growth Roast</h3>
+        <p>Deeper teardown + playbook. Best for landing page or offer fixes.</p>
+        <div class="price">$99</div>
+        <ul style="margin:0 0 10px;padding-left:18px">
+          <li>12–15 minute roast video</li>
+          <li>1-page action plan (PDF)</li>
+          <li>Swipe copy: headline + CTA</li>
+          <li>Delivery: within 24 hours</li>
+        </ul>
+        <div class="guarantee">100% money-back guarantee</div>
+        <div class="cta">
+          <a class="btn btn-primary cta-link"
+             href="https://buy.stripe.com/cNidR88v0g5ybba4xQ2Nq01"
+             data-plan="growth" aria-label="Buy Growth Roast">Get Growth Roast</a>
+        </div>
+      </article>
+
+      <!-- SCALE -->
+      <article class="card" aria-labelledby="scale">
+        <h3 id="scale">Scale Roast</h3>
+        <p>Everything in Growth + ad hooks, headline tests, and 30-day content map.</p>
+        <div class="price">$249</div>
+        <ul style="margin:0 0 10px;padding-left:18px">
+          <li>20–25 minute roast video</li>
+          <li>1-page action plan (PDF)</li>
+          <li>10 ad hooks + 10 headlines</li>
+          <li>30-day content map</li>
+          <li>Delivery: within 12 hours</li>
+        </ul>
+        <div class="guarantee">100% money-back guarantee</div>
+        <div class="cta">
+          <a class="btn btn-primary cta-link"
+             href="https://buy.stripe.com/8x228q6mSf1u1AA9Sa2Nq00"
+             data-plan="scale" aria-label="Buy Scale Roast">Get Scale Roast</a>
+        </div>
+      </article>
+    </div>
+    <p style="color:var(--muted);font-size:13px;margin-top:6px">All prices in USD. Instant confirmation by email.</p>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section id="faq" class="section container faq" aria-label="Frequently asked questions">
+    <h2 style="margin:0 0 12px">FAQ</h2>
+    <details><summary><b>How harsh is the roast?</b></summary>
+      <p>As harsh as the market. We say what your friends won’t so you don’t waste another month.</p>
+    </details>
+    <details><summary><b>What do you need from me?</b></summary>
+      <p>Your URL or idea summary, target customer, and current offer (if any). That’s it.</p>
+    </details>
+    <details><summary><b>What if I hate the advice?</b></summary>
+      <p>Then you get your money back. No drama.</p>
+    </details>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="section">
+    <div class="container" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px">
+      <div class="logo" aria-label="Roast Your Biz"><img src="assets/RoastYourBiz_Logo.png" alt="Roast Your Biz Logo"></div>
+      <div>© <span id="year"></span> AI Pioneer • All rights reserved.</div>
+    </div>
+  </footer>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script>
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Weekly countdown to Monday 09:00 America/New_York (rolls to next week if past 9am)
+    (function countdown(){
+      const out = document.getElementById('countdown');
+      function nowET(){ return new Date(new Date().toLocaleString('en-US',{timeZone:'America/New_York'})); }
+      function nextResetET(){
+        const n = nowET();
+        const day = n.getDay();                      // 0 Sun..6 Sat
+        const thisMonday = new Date(n);
+        thisMonday.setDate(n.getDate() - ((day+6)%7)); // Monday this week
+        thisMonday.setHours(9,0,0,0);
+        const nextMonday = new Date(thisMonday);
+        nextMonday.setDate(thisMonday.getDate()+7);
+        return n < thisMonday ? thisMonday : nextMonday;
+      }
+      const target = nextResetET();
+      function tick(){
+        const diff = target - nowET();
+        if(diff <= 0){ out.textContent = "00:00:00"; return; }
+        const h = Math.floor(diff/36e5);
+        const m = Math.floor(diff%36e5/6e4);
+        const s = Math.floor(diff%6e4/1e3);
+        out.textContent = `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+        requestAnimationFrame(tick);
+      }
+      tick();
+    })();
+
+    // Append UTM params from current URL to all CTA links + TikTok InitiateCheckout
+    (function attachUTM(){
+      const params = new URLSearchParams(location.search);
+      if(!params.has('utm_source')){ params.set('utm_source','site'); params.set('utm_medium','cta'); }
+      document.querySelectorAll('.cta-link').forEach(a=>{
+        const url = new URL(a.href);
+        params.forEach((v,k)=>url.searchParams.set(k,v));
+        url.searchParams.set('utm_campaign','pricing');
+        url.searchParams.set('utm_content', a.dataset.plan || 'unknown');
+        a.href = url.toString();
+        a.addEventListener('click', ()=>{ try{ ttq.track('InitiateCheckout', {content_name: a.dataset.plan}); }catch(e){} });
+      });
+    })();
+  </script>
 </body>
 </html>
