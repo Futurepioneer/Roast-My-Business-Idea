@@ -353,5 +353,48 @@ header .nav{ padding-top:6px; padding-bottom:6px; } /* centers it better */
   });
 </script>
 
-</body>
+</body>  // plan is on pricing CTAs via data-plan; header button has none
+        const plan = (a.dataset.plan || '').toLowerCase() || 'header';
+        const value = PRICE[plan];
+
+        // --- TikTok: InitiateCheckout + ClickButton (redundant on purpose for TT optimization) ---
+        try {
+          // InitiateCheckout works well for sending shoppers into checkout
+          ttq.track('InitiateCheckout', {
+            content_id: plan,
+            content_name: plan === 'header' ? 'get_roasted_header' : plan,
+            content_type: 'product',
+            quantity: 1,
+            value: value,
+            currency: 'USD'
+          });
+          // Extra lightweight click signal (nice for optimization)
+          ttq.track('ClickButton', { button_name: 'get_roasted' });
+        } catch (e) { /* no-op */ }
+
+        // --- GA4: begin_checkout + select_content (both helpful for funnels) ---
+        try {
+          // Structured commerce event
+          gtag('event', 'begin_checkout', {
+            currency: 'USD',
+            value: value,
+            items: [{
+              item_name: plan === 'header' ? 'get_roasted_header' : plan,
+              item_id: plan,
+              price: value,
+              quantity: 1
+            }]
+          });
+
+          // Extra “selection” signal
+          gtag('event', 'select_content', {
+            content_type: 'button',
+            item_id: plan === 'header' ? 'get_roasted_header' : plan
+          });
+        } catch (e) { /* no-op */ }
+      });
+    });
+  })();
+</script>
+<body>
 </html>
