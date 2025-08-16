@@ -46,37 +46,26 @@
     header{position:sticky;top:0;background:rgba(17,24,39,.7);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--border);z-index:50}
     .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
     .logo{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.6px}
- /* ===== HEADER LOGO ===== */
-.logo {
-  display:flex;
-  align-items:center;   /* vertically center with nav */
-  gap:12px;             /* spacing if text is added later */
-}
-
+/* ===== HEADER LOGO ===== */
 .logo img {
-  height:78px;          /* ~15–20% of header height */
+  height:96px;          /* much larger for visibility */
   width:auto;
-  min-width:120px;      /* ensures readability on mobile */
+  min-width:140px;      /* ensures readability */
   display:block;
-  margin:4px 0;         /* balances vertical spacing */
+  margin:6px 0;
 }
 
 /* Smaller but still readable on mobile */
 @media (max-width:900px){
   .logo img {
-    height:64px;
+    height:72px;
     min-width:120px;
   }
 }
 
 /* ===== FOOTER LOGO ===== */
-footer .logo {
-  display:flex;
-  align-items:center;   /* center in footer too */
-}
-
 footer .logo img {
-  height:56px;          /* slightly smaller for balance */
+  height:72px;          /* balanced but larger than before */
   width:auto;
   min-width:120px;
   display:block;
