@@ -335,6 +335,22 @@ header .nav{ padding-top:6px; padding-bottom:6px; } /* centers it better */
         a.addEventListener('click', ()=>{ try{ ttq.track('InitiateCheckout', {content_name: a.dataset.plan}); }catch(e){} });
       });
     })();
-  </script>
+  </script>  
+  <script>
+  // Track clicks on the "Get Roasted" button
+  document.addEventListener("DOMContentLoaded", function () {
+    const roastedBtn = document.querySelector('a[href*="get-roasted"], .get-roasted-btn');
+
+    if (roastedBtn) {
+      roastedBtn.addEventListener("click", function () {
+        gtag("event", "get_roasted_click", {
+          event_category: "engagement",
+          event_label: "Get Roasted Button",
+        });
+      });
+    }
+  });
+</script>
+
 </body>
 </html>
