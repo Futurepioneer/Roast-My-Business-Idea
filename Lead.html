@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Free Mini Roast — Roast Your Biz</title>
+  <meta name="description" content="Get a free mini roast: the top 5 things killing your conversions—and how to fix them." />
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+
+  <style>
+    :root{
+      --brand:#4f46e5; --accent:#f59e0b; --bg:#111827; --text:#f9fafb; --muted:#d1d5db;
+      --card:#1f2937; --border:#374151; --radius:14px; --shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box} html,body{margin:0;background:var(--bg);color:var(--text);
+      font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:850px;margin:0 auto;padding:32px}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+      box-shadow:var(--shadow);padding:22px}
+    h1{font-size:clamp(28px,4vw,44px);line-height:1.1;margin:0 0 10px}
+    .sub{color:var(--muted);margin:0 0 16px}
+    label{display:block;margin:12px 0 6px;font-weight:600}
+    input,textarea,select{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--border);
+      background:#0f172a;color:var(--text);outline:none}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .btn{display:inline-block;margin-top:14px;background:linear-gradient(135deg,var(--brand),var(--accent));
+      padding:14px 18px;border-radius:12px;font-weight:800;letter-spacing:.2px}
+    .muted{color:var(--muted);font-size:13px;margin-top:10px}
+    .logo{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.6px;margin-bottom:10px}
+    .logo img{height:30px}
+    .notice{background:#0f172a;border:1px solid var(--border);padding:10px;border-radius:10px;margin-top:12px}
+    @media (max-width: 800px){ .row{grid-template-columns:1fr} .logo img{height:24px} }
+  </style>
+
+  <!-- GA4 (already on index; include if this page is separate deploy) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-24DHFHS39X"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date()); gtag('config', 'G-24DHFHS39X');
+  </script>
+
+  <!-- TikTok Pixel (same ID you used on index) -->
+  <script>
+    !function(w,d,t){w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=
+    ["page","track","identify","instances","debug","on","off","once","ready","alias","group",
+     "enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],
+    ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(
+      Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)
+    ttq.setAndDefer(ttq,ttq.methods[i]);ttq.load=function(e,n){var r=
+    "https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],
+    ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};
+    n=d.createElement("script"),n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;
+    var a=d.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a)};
+    ttq.load('D2FRFOBC77U9PLHEKVDG'); ttq.page();
+  }(window, document, 'ttq');
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <a href="/" class="logo"><img src="assets/RoastYourBiz_Logo.png" alt="Roast Your Biz Logo">ROAST YOUR BIZ</a>
+
+    <div class="card">
+      <h1>Get a Free Mini Roast</h1>
+      <p class="sub">Drop your info and I’ll send the **Top 5 Conversion Killers** checklist + a quick video roast template you can run today.</p>
+
+      <!-- ===== Formspree: replace FORM_ID with your endpoint (see instructions below) ===== -->
+      <form id="leadForm" action="https://formspree.io/f/FORM_ID" method="POST">
+        <div class="row">
+          <div>
+            <label for="name">Your name</label>
+            <input id="name" name="name" required autocomplete="name">
+          </div>
+          <div>
+            <label for="email">Email address</label>
+            <input id="email" type="email" name="email" required autocomplete="email">
+          </div>
+        </div>
+
+        <label for="url">Website / idea (URL or short summary)</label>
+        <input id="url" name="url" placeholder="https://your-site.com or 'Idea: AI newsletter for chefs'">
+
+        <label for="goal">Biggest challenge right now</label>
+        <select id="goal" name="goal">
+          <option value="conversions">Conversions</option>
+          <option value="offer">Offer clarity</option>
+          <option value="traffic">Traffic</option>
+          <option value="messaging">Messaging</option>
+          <option value="other">Other</option>
+        </select>
+
+        <!-- Hidden fields to capture source -->
+        <input type="hidden" id="utm_source" name="utm_source">
+        <input type="hidden" id="utm_medium" name="utm_medium">
+        <input type="hidden" id="utm_campaign" name="utm_campaign">
+        <input type="hidden" id="utm_content" name="utm_content">
+        <input type="hidden" id="ref" name="ref">
+
+        <button class="btn" type="submit">Send me the Mini Roast</button>
+        <div class="muted">No spam. One-click unsubscribe.</div>
+
+        <div id="thanks" class="notice" style="display:none">
+          Thanks! Check your inbox in a minute. If you don’t see it, look in Promotions/Spam.
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Populate hidden UTM fields + referrer
+    (function(){
+      const p = new URLSearchParams(location.search);
+      ['utm_source','utm_medium','utm_campaign','utm_content'].forEach(k=>{
+        const v = p.get(k); if(v) document.getElementById(k).value = v;
+      });
+      document.getElementById('ref').value = document.referrer || '';
+    })();
+
+    // Fire analytics on submit and show thank-you without leaving the page
+    const form = document.getElementById('leadForm');
+    form.addEventListener('submit', function(ev){
+      // GA4 event
+      try {
+        gtag('event','generate_lead',{
+          method:'form',
+          page_location: location.href
+        });
+      } catch(e){}
+
+      // TikTok event
+      try { ttq.track('SubmitForm'); } catch(e){}
+
+      // Let Formspree submit normally but show instant feedback
+      setTimeout(()=>{ document.getElementById('thanks').style.display='block'; }, 300);
+    });
+  </script>
+</body>
+</html>
