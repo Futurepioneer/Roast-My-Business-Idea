@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Thank You — Roast Your Biz</title>
+  <meta name="description" content="Thanks for signing up for a free mini roast from Roast Your Biz." />
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+
+  <style>
+    :root{
+      --brand:#4f46e5; --accent:#f59e0b; --bg:#111827; --text:#f9fafb;
+      --muted:#d1d5db; --card:#1f2937; --border:#374151; --radius:14px;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+    *, *::before, *::after{box-sizing:border-box}
+    html,body{margin:0;padding:0;height:100%;background:var(--bg);color:var(--text);
+      font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;text-align:center}
+    .container{max-width:750px;margin:0 auto;padding:40px}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+      box-shadow:var(--shadow);padding:32px;margin-top:40px}
+    h1{font-size:clamp(32px,5vw,48px);margin:0 0 16px}
+    p{margin:0 0 18px}
+    .btn-primary{display:inline-block;background:linear-gradient(135deg,var(--brand),var(--accent));
+      padding:14px 22px;border-radius:12px;font-weight:700;letter-spacing:.2px;color:white;text-decoration:none}
+    .logo img{height:40px;margin-bottom:20px}
+    .share{margin-top:30px}
+    .share p{color:var(--muted);margin-bottom:12px}
+    .share a{display:inline-block;margin:5px;padding:10px 16px;border-radius:8px;font-weight:600;
+      text-decoration:none;color:white}
+    .twitter{background:#1DA1F2}
+    .linkedin{background:#0077B5}
+    .tiktok{background:#000}
+  </style>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-24DHFHS39X"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-24DHFHS39X');
+    gtag('event', 'conversion', { page: 'thank_you' });
+  </script>
+
+  <!-- TikTok Pixel -->
+  <script>
+    !function(w,d,t){w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=
+    ["page","track","identify","instances","debug","on","off","once","ready","alias","group",
+     "enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],
+    ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(
+      Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)
+    ttq.setAndDefer(ttq,ttq.methods[i]);ttq.load=function(e,n){var r=
+    "https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],
+    ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};
+    n=d.createElement("script"),n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;
+    var a=d.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a)};
+    ttq.load('D2FRFOBC77U9PLHEKVDG'); 
+    ttq.page();
+    ttq.track('CompleteRegistration'); // ✅ Track successful signup
+  }(window, document, 'ttq');
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <a href="/" class="logo">
+      <img src="assets/RoastYourBiz_Logo.png" alt="Roast Your Biz Logo">
+    </a>
+
+    <div class="card">
+      <h1>🔥 Thanks for Signing Up!</h1>
+      <p>Your free <strong>Mini Roast: Top 5 Conversion Killers</strong> is on its way to your inbox.</p>
+      <p>(Check spam/promotions if you don’t see it in the next few minutes.)</p>
+
+      <a href="/" class="btn-primary">Back to Homepage</a>
+
+      <!-- ✅ Share Section -->
+      <div class="share">
+        <p>👉 Love this? Share it with your friends:</p>
+        <a class="twitter" target="_blank" href="https://twitter.com/intent/tweet?text=I%20just%20got%20a%20brutal%20Mini%20Roast%20from%20RoastYourBiz!%20🔥%20Check%20it%20out%20here:%20https://www.roastyourbiz.com">Twitter</a>
+        <a class="linkedin" target="_blank" href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.roastyourbiz.com">LinkedIn</a>
+        <a class="tiktok" target="_blank" href="https://www.tiktok.com/">TikTok</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
