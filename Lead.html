@@ -9,12 +9,14 @@
 
   <style>
     :root{
-      --brand:#4f46e5; --accent:#f59e0b; --bg:#111827; --text:#f9fafb; --muted:#d1d5db;
-      --card:#1f2937; --border:#374151; --radius:14px; --shadow:0 10px 30px rgba(0,0,0,.35);
+      --brand:#4f46e5; --accent:#f59e0b; --bg:#111827; --text:#f9fafb;
+      --muted:#d1d5db; --card:#1f2937; --border:#374151; --radius:14px;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
     }
-    *{box-sizing:border-box} html,body{margin:0;background:var(--bg);color:var(--text);
+    *, *::before, *::after{box-sizing:border-box}
+    html,body{margin:0;padding:0;height:100%;background:var(--bg);color:var(--text);
       font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
-    a{color:inherit;text-decoration:none}
+    a{color:inherit; text-decoration:none}
     .container{max-width:850px;margin:0 auto;padding:32px}
     .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
       box-shadow:var(--shadow);padding:22px}
@@ -22,18 +24,20 @@
     .sub{color:var(--muted);margin:0 0 16px}
     label{display:block;margin:12px 0 6px;font-weight:600}
     input,textarea,select{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--border);
-      background:#0f172a;color:var(--text);outline:none}
+      background:#0f172a;color:var(--text);outline:none;}
     .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    .btn{display:inline-block;margin-top:14px;background:linear-gradient(135deg,var(--brand),var(--accent));
-      padding:14px 18px;border-radius:12px;font-weight:800;letter-spacing:.2px}
+    .btn-primary{display:inline-block;background:linear-gradient(135deg,var(--brand),var(--accent));
+      padding:12px 18px;border-radius:12px;font-weight:700;letter-spacing:.2px;color:white}
     .muted{color:var(--muted);font-size:13px;margin-top:10px}
     .logo{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.6px;margin-bottom:10px}
     .logo img{height:30px}
     .notice{background:#0f172a;border:1px solid var(--border);padding:10px;border-radius:10px;margin-top:12px}
-    @media (max-width: 800px){ .row{grid-template-columns:1fr} .logo img{height:24px} }
+    #ribbon{background:#0f172a;border-bottom:1px solid #374151;color:#f9fafb;position:sticky;top:0;z-index:999}
+    #ribbon .ribbon-inner{display:flex;gap:10px;align-items:center;justify-content:space-between;padding:10px}
+    @media (max-width:800px){.row{grid-template-columns:1fr}.logo img{height:24px}}
   </style>
 
-  <!-- GA4 (already on index; include if this page is separate deploy) -->
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-24DHFHS39X"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -41,7 +45,7 @@
     gtag('js', new Date()); gtag('config', 'G-24DHFHS39X');
   </script>
 
-  <!-- TikTok Pixel (same ID you used on index) -->
+  <!-- TikTok Pixel -->
   <script>
     !function(w,d,t){w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=
     ["page","track","identify","instances","debug","on","off","once","ready","alias","group",
@@ -59,15 +63,24 @@
 </head>
 
 <body>
+  <!-- Sticky Ribbon for quick access -->
+  <div id="ribbon">
+    <div class="ribbon-inner container">
+      <span>🎁 Free Mini Roast: Top 5 Conversion Killers (PDF)</span>
+      <a href="/lead.html" class="btn-primary">Get It</a>
+    </div>
+  </div>
+
   <div class="container">
-    <a href="/" class="logo"><img src="assets/RoastYourBiz_Logo.png" alt="Roast Your Biz Logo">ROAST YOUR BIZ</a>
+    <a href="/" class="logo">
+      <img src="assets/RoastYourBiz_Logo.png" alt="Roast Your Biz Logo"> ROAST YOUR BIZ
+    </a>
 
     <div class="card">
       <h1>Get a Free Mini Roast</h1>
-      <p class="sub">Drop your info and I’ll send the **Top 5 Conversion Killers** checklist + a quick video roast template you can run today.</p>
+      <p class="sub">Send me your info—I'll give you the top 5 conversion killers & a quick video roast template you can use today.</p>
 
-      <!-- ===== Formspree: replace FORM_ID with your endpoint (see instructions below) ===== -->
-      <form id="leadForm" action="https://formspree.io/f/FORM_ID" method="POST">
+      <form id="leadForm" action="https://formspree.io/f/xjkodgze" method="POST">
         <div class="row">
           <div>
             <label for="name">Your name</label>
@@ -79,61 +92,49 @@
           </div>
         </div>
 
-        <label for="url">Website / idea (URL or short summary)</label>
-        <input id="url" name="url" placeholder="https://your-site.com or 'Idea: AI newsletter for chefs'">
+        <label for="url">Website / Idea (URL or summary)</label>
+        <input id="url" name="url" placeholder="https://your-site.com or 'AI newsletter for chefs'">
 
-        <label for="goal">Biggest challenge right now</label>
+        <label for="goal">Biggest challenge</label>
         <select id="goal" name="goal">
           <option value="conversions">Conversions</option>
-          <option value="offer">Offer clarity</option>
+          <option value="offer">Offer Clarity</option>
           <option value="traffic">Traffic</option>
           <option value="messaging">Messaging</option>
           <option value="other">Other</option>
         </select>
 
-        <!-- Hidden fields to capture source -->
         <input type="hidden" id="utm_source" name="utm_source">
         <input type="hidden" id="utm_medium" name="utm_medium">
         <input type="hidden" id="utm_campaign" name="utm_campaign">
         <input type="hidden" id="utm_content" name="utm_content">
         <input type="hidden" id="ref" name="ref">
 
-        <button class="btn" type="submit">Send me the Mini Roast</button>
+        <button type="submit" class="btn-primary">Send me the Mini Roast</button>
         <div class="muted">No spam. One-click unsubscribe.</div>
-
         <div id="thanks" class="notice" style="display:none">
-          Thanks! Check your inbox in a minute. If you don’t see it, look in Promotions/Spam.
+          Thanks! Check your inbox soon. (Look in spam/promotions if you don’t see it)
         </div>
       </form>
     </div>
   </div>
 
   <script>
-    // Populate hidden UTM fields + referrer
+    // Populate UTM + referrer fields
     (function(){
       const p = new URLSearchParams(location.search);
       ['utm_source','utm_medium','utm_campaign','utm_content'].forEach(k=>{
-        const v = p.get(k); if(v) document.getElementById(k).value = v;
+        const v = p.get(k); if (v) document.getElementById(k).value = v;
       });
       document.getElementById('ref').value = document.referrer || '';
     })();
 
-    // Fire analytics on submit and show thank-you without leaving the page
-    const form = document.getElementById('leadForm');
-    form.addEventListener('submit', function(ev){
-      // GA4 event
+    document.getElementById('leadForm').addEventListener('submit', function(){
       try {
-        gtag('event','generate_lead',{
-          method:'form',
-          page_location: location.href
-        });
-      } catch(e){}
-
-      // TikTok event
-      try { ttq.track('SubmitForm'); } catch(e){}
-
-      // Let Formspree submit normally but show instant feedback
-      setTimeout(()=>{ document.getElementById('thanks').style.display='block'; }, 300);
+        gtag('event', 'generate_lead', { method: 'form', page_location: location.href });
+      } catch (e) {}
+      try { ttq.track('SubmitForm'); } catch (e) {}
+      setTimeout(() => { document.getElementById('thanks').style.display = 'block'; }, 300);
     });
   </script>
 </body>
