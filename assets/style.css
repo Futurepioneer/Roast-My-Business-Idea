@@ -207,3 +207,159 @@ header, .header {
     padding: 20px !important;
     border-radius: 10px !important;
 }
+/* 🚀 NUCLEAR 10/10 UPGRADE - OVERRIDE EVERYTHING */
+
+/* MASSIVE logo - impossible to miss */
+img[src*="logo"], .logo, .logo img, header img, .navbar-brand img, .brand img {
+    width: 280px !important;
+    max-width: 280px !important;
+    height: auto !important;
+    transition: all 0.3s ease !important;
+    filter: drop-shadow(2px 2px 8px rgba(0,0,0,0.2)) !important;
+}
+
+img[src*="logo"]:hover, .logo:hover, .logo img:hover {
+    transform: scale(1.08) !important;
+    filter: drop-shadow(4px 4px 12px rgba(0,0,0,0.3)) !important;
+}
+
+/* SAVAGE typography */
+h1, h2, h3, .hero-title, .main-title, .headline {
+    font-weight: 900 !important;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.4) !important;
+    color: #1a1a1a !important;
+}
+
+h1, .hero-title, .main-title {
+    font-size: 4rem !important;
+    line-height: 1.1 !important;
+    letter-spacing: -1px !important;
+}
+
+h2 {
+    font-size: 2.8rem !important;
+}
+
+/* BRUTAL buttons */
+button, .btn, .button, input[type="submit"], a[href*="tally"] {
+    background: linear-gradient(135deg, #ff1744, #d50000) !important;
+    color: white !important;
+    border: none !important;
+    padding: 18px 36px !important;
+    font-size: 1.2rem !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1.5px !important;
+    border-radius: 12px !important;
+    box-shadow: 0 10px 30px rgba(255, 23, 68, 0.5) !important;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    cursor: pointer !important;
+}
+
+button:hover, .btn:hover, .button:hover, input[type="submit"]:hover {
+    transform: translateY(-5px) scale(1.05) !important;
+    box-shadow: 0 15px 40px rgba(255, 23, 68, 0.7) !important;
+    background: linear-gradient(135deg, #ff4569, #ff1744) !important;
+}
+
+/* Aggressive color scheme + animations */
+body {
+    font-family: 'Inter', 'Helvetica', Arial, sans-serif !important;
+    line-height: 1.6 !important;
+    animation: fadeInUp 1s ease-out !important;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* PREMIUM header styling */
+header, .header, nav, .navbar {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(15px) !important;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1) !important;
+    padding: 15px 0 !important;
+}
+
+/* Savage accent */
+.text-primary, .accent, strong, b {
+    color: #ff1744 !important;
+    font-weight: 700 !important;
+}
+
+/* Pricing card enhancements */
+.card, .pricing-card, .price-box, .plan {
+    border: 2px solid transparent !important;
+    border-radius: 20px !important;
+    padding: 30px !important;
+    transition: all 0.4s ease !important;
+    background: white !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important;
+}
+
+.card:hover, .pricing-card:hover, .price-box:hover {
+    transform: translateY(-15px) !important;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.2) !important;
+    border-color: #ff1744 !important;
+}
+
+/* MOBILE perfection */
+@media (max-width: 768px) {
+    img[src*="logo"], .logo, .logo img {
+        width: 220px !important;
+        max-width: 220px !important;
+    }
+    h1, .hero-title, .main-title {
+        font-size: 2.8rem !important;
+    }
+    button, .btn, .button {
+        min-height: 60px !important;
+        font-size: 1.1rem !important;
+        padding: 20px 30px !important;
+    }
+}
+
+/* EXTRA small mobile */
+@media (max-width: 480px) {
+    img[src*="logo"], .logo, .logo img {
+        width: 180px !important;
+    }
+    h1, .hero-title, .main-title {
+        font-size: 2.4rem !important;
+    }
+}
+
+/* Global smooth transitions */
+* {
+    transition: all 0.3s ease !important;
+}
+
+a:hover, .link:hover {
+    transform: translateY(-2px) !important;
+    color: #ff1744 !important;
+}
+
+/* Testimonials */
+.testimonial, .review, blockquote {
+    border-left: 6px solid #ff1744 !important;
+    background: linear-gradient(135deg, rgba(255, 23, 68, 0.05), rgba(255, 23, 68, 0.02)) !important;
+    padding: 25px !important;
+    border-radius: 15px !important;
+    margin: 20px 0 !important;
+}
+
+/* Form styling */
+input, textarea, select {
+    border: 2px solid #e0e0e0 !important;
+    border-radius: 10px !important;
+    padding: 15px !important;
+    font-size: 1.1rem !important;
+    transition: all 0.3s ease !important;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: #ff1744 !important;
+    box-shadow: 0 0 0 3px rgba(255, 23, 68, 0.1) !important;
+    outline: none !important;
+}
