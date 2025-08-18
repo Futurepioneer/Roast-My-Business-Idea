@@ -108,3 +108,102 @@ header, .nav, .site-header {
   min-height: 120px; /* = logo height */
   align-items: center;
 }
+/* 🚀 UPGRADE TO 10/10 VISUAL IMPACT */
+
+/* Bigger, more commanding logo */
+.logo img {
+    width: 220px !important;  /* 30% bigger than current */
+    height: auto !important;
+    transition: transform 0.3s ease !important;
+}
+
+.logo img:hover {
+    transform: scale(1.05) !important;  /* Subtle hover effect */
+}
+
+/* Enhanced typography hierarchy */
+h1, .hero-title {
+    font-size: 3.2rem !important;
+    font-weight: 900 !important;
+    line-height: 1.1 !important;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3) !important;
+}
+
+h2 {
+    font-size: 2.4rem !important;
+    font-weight: 800 !important;
+}
+
+/* More savage button styling */
+.btn-primary, .cta-button, button[type="submit"] {
+    background: linear-gradient(135deg, #ff4444, #cc0000) !important;
+    border: none !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    box-shadow: 0 8px 20px rgba(255, 68, 68, 0.4) !important;
+    transition: all 0.3s ease !important;
+}
+
+.btn-primary:hover, .cta-button:hover, button[type="submit"]:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 12px 25px rgba(255, 68, 68, 0.6) !important;
+    background: linear-gradient(135deg, #ff6666, #ee0000) !important;
+}
+
+/* Savage accent colors */
+.text-accent, .highlight {
+    color: #ff4444 !important;
+    font-weight: 700 !important;
+}
+
+/* Enhanced mobile experience */
+@media (max-width: 768px) {
+    .logo img {
+        width: 180px !important;  /* Still bigger on mobile */
+    }
+    
+    h1, .hero-title {
+        font-size: 2.8rem !important;
+    }
+    
+    .btn-primary, .cta-button {
+        min-height: 54px !important;  /* Perfect touch target */
+        font-size: 1.1rem !important;
+    }
+}
+
+/* Subtle page load animation */
+body {
+    animation: fadeIn 0.8s ease-out !important;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Enhanced header impact */
+header, .header {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+/* Pricing card enhancements */
+.pricing-card, .price-box {
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+    border-radius: 15px !important;
+}
+
+.pricing-card:hover, .price-box:hover {
+    transform: translateY(-10px) !important;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15) !important;
+}
+
+/* Testimonial/social proof styling */
+.testimonial, .review {
+    border-left: 5px solid #ff4444 !important;
+    background: rgba(255, 68, 68, 0.05) !important;
+    padding: 20px !important;
+    border-radius: 10px !important;
+}
