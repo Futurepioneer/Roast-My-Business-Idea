@@ -1,38 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thank You – Your Free Guide</title>
-  <link rel="stylesheet" href="assets/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thank You!</title>
+  <link rel="stylesheet" href="assets/style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      text-align: center;
+      padding: 50px;
+    }
+    .container {
+      background: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      max-width: 650px;
+      margin: auto;
+    }
+    img.logo { max-width: 200px; margin-bottom: 20px; }
+    h1 { color: #d62828; }
+    p  { font-size: 1.2em; margin-bottom: 25px; }
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      padding: 14px 24px;
+      border-radius: 8px;
+      font-size: 1.1em;
+      font-weight: bold;
+      transition: background .3s;
+      margin: 10px;
+    }
+    .btn-primary   { background:#d62828; color:#fff; }
+    .btn-primary:hover { background:#a71d2a; }
+    .btn-secondary { background:#6c757d; color:#fff; }
+    .btn-secondary:hover { background:#565e64; }
+  </style>
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-24DHFHS39X"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-24DHFHS39X', { send_page_view: true });
+  </script>
 </head>
 <body>
-  <!-- ===== RIBBON ===== -->
-  <div id="ribbon">
-    <div class="ribbon-inner container">
-      <span>🎉 Thanks for signing up!</span>
-      <a href="/" class="btn-primary">Back to Home</a>
-    </div>
+  <div class="container">
+    <img src="assets/RoastYourBiz_Logo.png" alt="Roast Your Biz Logo" class="logo" />
+    <h1>🎉 Thank You!</h1>
+    <p>Your free guide is ready. Click below to download it instantly:</p>
+
+    <!-- Download PDF -->
+    <a id="download-btn"
+       href="assets/Top_5_Conversion_Killers.pdf"
+       download
+       class="btn btn-primary">
+      ⬇️ Download "Top 5 Conversion Killers"
+    </a>
+    <br />
+
+    <!-- Back to Homepage -->
+    <a id="home-btn"
+       href="https://www.roastyourbiz.com"
+       class="btn btn-secondary">
+      ⬅️ Back to Homepage
+    </a>
   </div>
 
-  <!-- ===== MAIN SECTION ===== -->
-  <main class="container" style="padding: 3rem 1rem; max-width: 700px; margin: auto; text-align: center;">
-    <h1>Your Free Guide is Ready 🎁</h1>
-    <p style="margin: 1rem 0; font-size: 1.1rem;">
-      Click the button below to download your copy of  
-      <strong>“Top 5 Conversion Killers”</strong>.  
-      Start fixing your funnel and converting more customers today!
-    </p>
+  <script>
+    // Track download click
+    document.getElementById('download-btn')?.addEventListener('click', function(){
+      try {
+        gtag('event', 'file_download', {
+          file_name: 'Top_5_Conversion_Killers.pdf',
+          link_id: 'download_top5_pdf',
+          page_location: location.href
+        });
+      } catch(e){}
+    });
 
-    <!-- ===== DOWNLOAD BUTTON ===== -->
-    <a href="Top_5_Conversion_Killers.pdf" download
-      style="display: inline-block; margin-top: 2rem; padding: 14px 24px; border-radius: 6px; background: #ef4444; color: #fff; font-size: 1.1rem; font-weight: bold; text-decoration: none;">
-      ⬇️ Download My Free Guide
-    </a>
-
-    <p style="margin-top: 2rem; font-size: 0.9rem; color: #666;">
-      Didn’t get the file? <a href="mailto:support@aipioneer.com">Contact us</a> and we’ll send it straight to your inbox.
-    </p>
-  </main>
+    // Track back-to-home click
+    document.getElementById('home-btn')?.addEventListener('click', function(){
+      try {
+        gtag('event', 'select_content', {
+          content_type: 'button',
+          item_id: 'back_to_home',
+          page_location: location.href
+        });
+      } catch(e){}
+    });
+  </script>
 </body>
 </html>
