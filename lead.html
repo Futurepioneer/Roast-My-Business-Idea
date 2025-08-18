@@ -1,153 +1,39 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Free Report: Top 5 Conversion Killers — Roast Your Biz</title>
-  <meta name="description" content="Grab the free report: the Top 5 Conversion Killers on your site—and how to fix each one fast." />
-  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
-
-  <style>
-    :root{
-      --brand:#4f46e5; --accent:#f59e0b; --bg:#111827; --text:#f9fafb;
-      --muted:#d1d5db; --card:#1f2937; --border:#374151; --radius:14px;
-      --shadow:0 10px 30px rgba(0,0,0,.35);
-    }
-    *, *::before, *::after{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    html,body{margin:0;padding:0;height:100%;background:var(--bg);color:var(--text);
-      font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
-    a{color:inherit;text-decoration:none}
-    .container{max-width:850px;margin:0 auto;padding:32px}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
-      box-shadow:var(--shadow);padding:22px}
-    h1{font-size:clamp(28px,4vw,44px);line-height:1.1;margin:0 0 8px}
-    .sub{color:var(--muted);margin:0 0 18px}
-    label{display:block;margin:12px 0 6px;font-weight:600}
-    input,select{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--border);
-      background:#0f172a;color:var(--text);outline:none}
-    .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    .btn-primary{display:inline-block;background:linear-gradient(135deg,var(--brand),var(--accent));
-      padding:12px 18px;border-radius:12px;font-weight:700;letter-spacing:.2px;color:white}
-    .muted{color:var(--muted);font-size:13px;margin-top:10px}
-    .logo{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.6px;margin-bottom:10px}
-    .logo img{height:30px}
-    .notice{background:#0f172a;border:1px solid var(--border);padding:10px;border-radius:10px;margin-top:12px}
-    #ribbon{background:#0f172a;border-bottom:1px solid #374151;color:#f9fafb;position:sticky;top:0;z-index:999}
-    #ribbon .ribbon-inner{display:flex;gap:10px;align-items:center;justify-content:space-between;padding:10px}
-    @media (max-width:800px){.row{grid-template-columns:1fr}.logo img{height:24px}}
-  </style>
-
-  <!-- GA4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-24DHFHS39X"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-24DHFHS39X');
-  </script>
-
-  <!-- TikTok Pixel -->
-  <script>
-    !function(w,d,t){w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=
-    ["page","track","identify","instances","debug","on","off","once","ready","alias","group",
-     "enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],
-    ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(
-      Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)
-    ttq.setAndDefer(ttq,ttq.methods[i]);ttq.load=function(e,n){var r=
-    "https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],
-    ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};
-    n=d.createElement("script"),n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;
-    var a=d.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a)};
-    ttq.load('D2FRFOBC77U9PLHEKVDG'); ttq.page();
-  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Your Free Guide – Top 5 Conversion Killers</title>
+  <link rel="stylesheet" href="assets/style.css">
 </head>
-
 <body>
-  <!-- Sticky Ribbon -->
+  <!-- ===== RIBBON ===== -->
   <div id="ribbon">
     <div class="ribbon-inner container">
-      <span>🎁 Free Report: Top 5 Conversion Killers (and How to Fix Them)</span>
-      <a href="#leadForm" class="btn-primary">Get It</a>
+      <span>🎁 Free Guide: Top 5 Conversion Killers</span>
+      <a href="/lead.html" class="btn-primary">Get It</a>
     </div>
   </div>
 
-  <div class="container">
-    <a href="/" class="logo">
-      <img src="assets/RoastYourBiz_Logo.png" alt="Roast Your Biz Logo"> ROAST YOUR BIZ
-    </a>
+  <!-- ===== MAIN SECTION ===== -->
+  <main class="container" style="padding: 3rem 1rem; max-width: 700px; margin: auto; text-align: center;">
+    <h1>Discover the Top 5 Conversion Killers Costing You Sales</h1>
+    <p style="margin: 1rem 0; font-size: 1.1rem;">
+      Enter your email below and get the free PDF guide instantly.  
+      Stop losing customers and start converting more traffic today.
+    </p>
 
-    <div class="card">
-      <h1>Claim Your Free Report</h1>
-      <p class="sub">Snag the **Top 5 Conversion Killers** quietly wrecking most sites—plus quick fixes you can implement today.</p>
+    <!-- ===== FORM ===== -->
+    <form action="https://formspree.io/f/xjkodgze" method="POST" style="margin-top: 2rem;">
+      <input type="email" name="email" placeholder="Your best email" required
+        style="padding: 12px; width: 100%; max-width: 400px; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 6px;">
+      
+      <input type="hidden" name="_next" value="https://www.roastyourbiz.com/thank-you.html">
 
-      <!-- FORM: Formspree -->
-      <form id="leadForm" action="https://formspree.io/f/xjkodgze" method="POST">
-        <div class="row">
-          <div>
-            <label for="name">Your name</label>
-            <input id="name" name="name" required autocomplete="name">
-          </div>
-          <div>
-            <label for="email">Email address</label>
-            <input id="email" type="email" name="email" required autocomplete="email">
-          </div>
-        </div>
-
-        <!-- Optional: where you're struggling most (kept simple) -->
-        <label for="challenge">Biggest conversion challenge</label>
-        <select id="challenge" name="challenge">
-          <option value="clarity">Unclear offer/message</option>
-          <option value="traffic">Not enough qualified traffic</option>
-          <option value="speed">Site speed/tech issues</option>
-          <option value="trust">Low trust / weak proof</option>
-          <option value="other">Other</option>
-        </select>
-
-        <!-- Hidden fields -->
-        <input type="hidden" name="_subject" value="New Top 5 Conversion Killers request">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" id="utm_source" name="utm_source">
-        <input type="hidden" id="utm_medium" name="utm_medium">
-        <input type="hidden" id="utm_campaign" name="utm_campaign">
-        <input type="hidden" id="utm_content" name="utm_content">
-        <input type="hidden" id="ref" name="ref">
-        <!-- Redirect to your thank-you page (put download link there) -->
-        <input type="hidden" name="_next" value="https://www.roastyourbiz.com/thank-you.html">
-
-        <button type="submit" class="btn-primary">Send Me the Report</button>
-        <div class="muted">No spam. One-click unsubscribe.</div>
-
-        <div id="thanks" class="notice" style="display:none">
-          Thanks! If you’re not redirected, you can <a href="/assets/Top_5_Conversion_Killers.pdf">download the report here</a>.
-        </div>
-      </form>
-    </div>
-
-    <div class="muted" style="margin-top:12px">
-      Prefer not to wait? <a href="/assets/Top_5_Conversion_Killers.pdf">Download the PDF directly</a>.
-    </div>
-  </div>
-
-  <script>
-    // Populate UTM + referrer fields
-    (function(){
-      const p = new URLSearchParams(location.search);
-      ['utm_source','utm_medium','utm_campaign','utm_content'].forEach(k=>{
-        const v = p.get(k); if (v) document.getElementById(k).value = v;
-      });
-      document.getElementById('ref').value = document.referrer || '';
-    })();
-
-    // Track submit -> GA4 + TikTok + show inline backup thanks
-    document.getElementById('leadForm').addEventListener('submit', function(){
-      try {
-        gtag('event', 'generate_lead', { method: 'form', page_location: location.href });
-      } catch (e) {}
-      try { ttq.track('SubmitForm'); } catch (e) {}
-      // brief fallback in case redirect is blocked
-      setTimeout(() => { document.getElementById('thanks').style.display = 'block'; }, 400);
-    });
-  </script>
+      <button type="submit" style="padding: 12px 20px; border-radius: 6px; background: #ef4444; color: #fff; font-size: 1rem; font-weight: bold; border: none; cursor: pointer;">
+        Send Me the Free Guide
+      </button>
+    </form>
+  </main>
 </body>
 </html>
