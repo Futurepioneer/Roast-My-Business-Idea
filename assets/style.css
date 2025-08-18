@@ -3,12 +3,15 @@
   background: #0f172a;
   border-bottom: 1px solid #374151;
   color: #f9fafb;
-  font-size: 0.95rem;
-  font-weight: 500;
-  padding: 8px 0;
+  font-size: 1.05rem;                 /* bigger text */
+  font-weight: 600;
+  padding: 12px 0;                    /* taller bar */
   position: sticky;
   top: 0;
   z-index: 1000;
+  box-shadow: 0 4px 14px rgba(0,0,0,.25);
+  transform: translateY(-100%);
+  animation: ribbonIn .45s ease-out forwards;  /* slide down on load */
 }
 
 .ribbon-inner {
@@ -19,8 +22,8 @@
 }
 
 #ribbon .btn-primary {
-  padding: 8px 14px;
-  border-radius: 8px;
+  padding: 10px 16px;                 /* slightly larger button */
+  border-radius: 10px;
   background: linear-gradient(135deg, var(--brand), var(--accent));
   color: #fff;
   font-weight: 700;
@@ -28,70 +31,54 @@
   box-shadow: var(--shadow);
   transition: filter 0.2s ease;
 }
+#ribbon .btn-primary:hover { filter: brightness(1.1); }
 
-#ribbon .btn-primary:hover {
-  filter: brightness(1.1);
+@keyframes ribbonIn {
+  to { transform: translateY(0); }
 }
 
 /* ===== Ribbon Responsive Styles ===== */
 @media (max-width: 640px) {
   #ribbon {
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     padding: 10px;
   }
-
   .ribbon-inner {
     flex-direction: column;
     gap: 8px;
     text-align: center;
   }
-
   #ribbon .btn-primary {
     width: 100%;
     text-align: center;
   }
-/* Make RoastYourBiz logo bigger in navbar (responsive) */
-.logo img {
-  height: 100px;      /* desktop size */
-  width: auto;
-  display: inline-block;
-  vertical-align: middle;
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
+}  /* <-- IMPORTANT: close the mobile media query! */
 
-/* Medium screens (tablets) */
-@media (max-width: 1024px) {
-  .logo img {
-    height: 80px;
-  }
-}
 
-/* Small screens (phones) */
-@media (max-width: 768px) {
-  .logo img {
-    height: 60px;
-  }
-}
-
-/* Extra small screens */
-@media (max-width: 480px) {
-  .logo img {
-    height: 50px;
-  }
-}/* === Force Bigger Logo Across Devices === */
+/* ===== Logo size (wins over everything) ===== */
 .logo,
 .logo img,
 header .logo,
 header .logo img,
 .header-logo,
 .navbar-brand img {
-  max-width: 180px !important;
+  max-width: 180px !important;   /* desktop size */
   width: 180px !important;
   height: auto !important;
 }
 
-/* Mobile responsive override */
+@media (max-width: 1024px) {
+  .logo,
+  .logo img,
+  header .logo,
+  header .logo img,
+  .header-logo,
+  .navbar-brand img {
+    max-width: 160px !important; /* tablets */
+    width: 160px !important;
+  }
+}
+
 @media (max-width: 768px) {
   .logo,
   .logo img,
@@ -99,8 +86,7 @@ header .logo img,
   header .logo img,
   .header-logo,
   .navbar-brand img {
-    max-width: 140px !important;
+    max-width: 140px !important; /* phones */
     width: 140px !important;
-    height: auto !important;
   }
 }
