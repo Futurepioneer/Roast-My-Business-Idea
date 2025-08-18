@@ -1,47 +1,38 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Thank You — Roast Your Biz</title>
-  <meta name="description" content="Download your free report: Top 5 Conversion Killers (and how to fix them).">
-  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
-
-  <style>
-    :root {
-      --brand:#4f46e5; --accent:#f59e0b; --bg:#111827; --text:#f9fafb;
-      --muted:#d1d5db; --card:#1f2937; --border:#374151;
-      --radius:14px; --shadow:0 10px 30px rgba(0,0,0,.35);
-    }
-    html,body {margin:0;padding:0;background:var(--bg);color:var(--text);
-      font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;text-align:center}
-    .container {max-width:650px;margin:0 auto;padding:40px 20px}
-    .card {background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
-      box-shadow:var(--shadow);padding:32px}
-    h1 {font-size:clamp(26px,4vw,40px);margin-bottom:10px}
-    p {color:var(--muted);margin-bottom:22px}
-    a.btn {display:inline-block;background:linear-gradient(135deg,var(--brand),var(--accent));
-      padding:14px 22px;border-radius:12px;font-weight:700;color:#fff;letter-spacing:.3px}
-    a.btn:hover {opacity:.9}
-    .muted {margin-top:20px;font-size:14px;color:var(--muted)}
-    .logo {display:flex;align-items:center;justify-content:center;gap:10px;font-weight:900;margin-bottom:20px}
-    .logo img {height:32px}
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You – Your Free Guide</title>
+  <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-  <div class="container">
-    <a href="/" class="logo">
-      <img src="assets/RoastYourBiz_Logo.png" alt="Roast Your Biz Logo"> ROAST YOUR BIZ
-    </a>
-    <div class="card">
-      <h1>🎉 Thanks for Signing Up!</h1>
-      <p>Your free report is ready: <strong>Top 5 Conversion Killers (and How to Fix Them)</strong></p>
-      <a href="/assets/Top_5_Conversion_Killers.pdf" class="btn">📥 Download Report</a>
-      <p class="muted">We also sent a copy to your inbox. Check spam/promotions if you don’t see it.</p>
-    </div>
-    <div class="muted">
-      Ready for the full roast? <a href="/#pricing">See our packages</a>
+  <!-- ===== RIBBON ===== -->
+  <div id="ribbon">
+    <div class="ribbon-inner container">
+      <span>🎉 Thanks for signing up!</span>
+      <a href="/" class="btn-primary">Back to Home</a>
     </div>
   </div>
+
+  <!-- ===== MAIN SECTION ===== -->
+  <main class="container" style="padding: 3rem 1rem; max-width: 700px; margin: auto; text-align: center;">
+    <h1>Your Free Guide is Ready 🎁</h1>
+    <p style="margin: 1rem 0; font-size: 1.1rem;">
+      Click the button below to download your copy of  
+      <strong>“Top 5 Conversion Killers”</strong>.  
+      Start fixing your funnel and converting more customers today!
+    </p>
+
+    <!-- ===== DOWNLOAD BUTTON ===== -->
+    <a href="Top_5_Conversion_Killers.pdf" download
+      style="display: inline-block; margin-top: 2rem; padding: 14px 24px; border-radius: 6px; background: #ef4444; color: #fff; font-size: 1.1rem; font-weight: bold; text-decoration: none;">
+      ⬇️ Download My Free Guide
+    </a>
+
+    <p style="margin-top: 2rem; font-size: 0.9rem; color: #666;">
+      Didn’t get the file? <a href="mailto:support@aipioneer.com">Contact us</a> and we’ll send it straight to your inbox.
+    </p>
+  </main>
 </body>
 </html>
