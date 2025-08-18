@@ -53,7 +53,15 @@
     header{position:sticky;top:48px;background:rgba(17,24,39,.7);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--border);z-index:900}
     .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
     .logo{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:.6px}
-    .logo img{height:42px;width:auto;display:block} /* logo size */
+    /* Logo size (desktop) */
+    .logo img{height:120px;width:auto;display:block}
+
+    /* Tablets */
+    @media (max-width:1024px){ .logo img{height:100px} }
+
+    /* Phones */
+    @media (max-width:768px){ .logo img{height:80px} }
+
 
     /* Hero */
     .hero{display:grid;grid-template-columns:1.1fr 0.9fr;gap:28px;align-items:center;padding:48px 28px}
