@@ -58,5 +58,8 @@
   vertical-align: middle;
   margin-top: 5px;  /* adjust spacing so it’s centered */
   margin-bottom: 5px;
-}
+#pricing .card { display:flex; flex-direction:column; }
+#pricing .card ul { flex:1; }
+#pricing .card .btn-primary { margin-top:auto; }
+
 }
