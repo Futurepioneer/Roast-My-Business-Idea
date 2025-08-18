@@ -50,16 +50,35 @@
     width: 100%;
     text-align: center;
   }
-/* Make RoastYourBiz logo bigger in navbar */
-.logo {
-  height: 100px;   /* adjust size */
-  width: auto;     /* keeps proportions */
+/* Make RoastYourBiz logo bigger in navbar (responsive) */
+.logo img {
+  height: 100px;      /* desktop size */
+  width: auto;
   display: inline-block;
   vertical-align: middle;
-  margin-top: 5px;  /* adjust spacing so it’s centered */
+  margin-top: 5px;
   margin-bottom: 5px;
-#pricing .card { display:flex; flex-direction:column; }
-#pricing .card ul { flex:1; }
-#pricing .card .btn-primary { margin-top:auto; }
+}
+
+/* Medium screens (tablets) */
+@media (max-width: 1024px) {
+  .logo img {
+    height: 80px;
+  }
+}
+
+/* Small screens (phones) */
+@media (max-width: 768px) {
+  .logo img {
+    height: 60px;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .logo img {
+    height: 50px;
+  }
+}
 
 }
