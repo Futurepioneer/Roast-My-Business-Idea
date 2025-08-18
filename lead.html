@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Free Mini Roast — Roast Your Biz</title>
-  <meta name="description" content="Get a free mini roast: the top 5 things killing your conversions—and how to fix them." />
+  <title>Free Report: Top 5 Conversion Killers — Roast Your Biz</title>
+  <meta name="description" content="Grab the free report: the Top 5 Conversion Killers on your site—and how to fix each one fast." />
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
 
   <style>
@@ -14,18 +14,18 @@
       --shadow:0 10px 30px rgba(0,0,0,.35);
     }
     *, *::before, *::after{box-sizing:border-box}
-    html{scroll-behavior:smooth;}
+    html{scroll-behavior:smooth}
     html,body{margin:0;padding:0;height:100%;background:var(--bg);color:var(--text);
       font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
-    a{color:inherit; text-decoration:none}
+    a{color:inherit;text-decoration:none}
     .container{max-width:850px;margin:0 auto;padding:32px}
     .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
       box-shadow:var(--shadow);padding:22px}
-    h1{font-size:clamp(28px,4vw,44px);line-height:1.1;margin:0 0 10px}
-    .sub{color:var(--muted);margin:0 0 16px}
+    h1{font-size:clamp(28px,4vw,44px);line-height:1.1;margin:0 0 8px}
+    .sub{color:var(--muted);margin:0 0 18px}
     label{display:block;margin:12px 0 6px;font-weight:600}
-    input,textarea,select{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--border);
-      background:#0f172a;color:var(--text);outline:none;}
+    input,select{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--border);
+      background:#0f172a;color:var(--text);outline:none}
     .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
     .btn-primary{display:inline-block;background:linear-gradient(135deg,var(--brand),var(--accent));
       padding:12px 18px;border-radius:12px;font-weight:700;letter-spacing:.2px;color:white}
@@ -38,12 +38,13 @@
     @media (max-width:800px){.row{grid-template-columns:1fr}.logo img{height:24px}}
   </style>
 
-  <!-- Google Analytics -->
+  <!-- GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-24DHFHS39X"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date()); gtag('config', 'G-24DHFHS39X');
+    gtag('js', new Date());
+    gtag('config', 'G-24DHFHS39X');
   </script>
 
   <!-- TikTok Pixel -->
@@ -59,19 +60,17 @@
     n=d.createElement("script"),n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;
     var a=d.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a)};
     ttq.load('D2FRFOBC77U9PLHEKVDG'); ttq.page();
-  }(window, document, 'ttq');
   </script>
 </head>
 
 <body>
-  <!-- Sticky Ribbon for quick access -->
+  <!-- Sticky Ribbon -->
   <div id="ribbon">
     <div class="ribbon-inner container">
-      <span>🎁 Free Mini Roast: Top 5 Conversion Killers (PDF)</span>
-      <!-- Direct to lead form (this page) -->
+      <span>🎁 Free Report: Top 5 Conversion Killers (and How to Fix Them)</span>
       <a href="#leadForm" class="btn-primary">Get It</a>
     </div>
-  </div> <!-- ✅ close the ribbon -->
+  </div>
 
   <div class="container">
     <a href="/" class="logo">
@@ -79,9 +78,10 @@
     </a>
 
     <div class="card">
-      <h1>Get a Free Mini Roast</h1>
-      <p class="sub">Send me your info—I'll give you the top 5 conversion killers & a quick video roast template you can use today.</p>
+      <h1>Claim Your Free Report</h1>
+      <p class="sub">Snag the **Top 5 Conversion Killers** quietly wrecking most sites—plus quick fixes you can implement today.</p>
 
+      <!-- FORM: Formspree -->
       <form id="leadForm" action="https://formspree.io/f/xjkodgze" method="POST">
         <div class="row">
           <div>
@@ -94,32 +94,38 @@
           </div>
         </div>
 
-        <label for="url">Website / Idea (URL or summary)</label>
-        <input id="url" name="url" placeholder="https://your-site.com or 'AI newsletter for chefs'">
-
-        <label for="goal">Biggest challenge</label>
-        <select id="goal" name="goal">
-          <option value="conversions">Conversions</option>
-          <option value="offer">Offer Clarity</option>
-          <option value="traffic">Traffic</option>
-          <option value="messaging">Messaging</option>
+        <!-- Optional: where you're struggling most (kept simple) -->
+        <label for="challenge">Biggest conversion challenge</label>
+        <select id="challenge" name="challenge">
+          <option value="clarity">Unclear offer/message</option>
+          <option value="traffic">Not enough qualified traffic</option>
+          <option value="speed">Site speed/tech issues</option>
+          <option value="trust">Low trust / weak proof</option>
           <option value="other">Other</option>
         </select>
 
+        <!-- Hidden fields -->
+        <input type="hidden" name="_subject" value="New Top 5 Conversion Killers request">
+        <input type="hidden" name="_template" value="table">
         <input type="hidden" id="utm_source" name="utm_source">
         <input type="hidden" id="utm_medium" name="utm_medium">
         <input type="hidden" id="utm_campaign" name="utm_campaign">
         <input type="hidden" id="utm_content" name="utm_content">
         <input type="hidden" id="ref" name="ref">
+        <!-- Redirect to your thank-you page (put download link there) -->
         <input type="hidden" name="_next" value="https://www.roastyourbiz.com/thank-you.html">
-        <input type="text" name="_gotcha" style="display:none">
 
-        <button type="submit" class="btn-primary">Send me the Mini Roast</button>
+        <button type="submit" class="btn-primary">Send Me the Report</button>
         <div class="muted">No spam. One-click unsubscribe.</div>
+
         <div id="thanks" class="notice" style="display:none">
-          Thanks! Check your inbox soon. (Look in spam/promotions if you don’t see it)
+          Thanks! If you’re not redirected, you can <a href="/assets/Top_5_Conversion_Killers.pdf">download the report here</a>.
         </div>
       </form>
+    </div>
+
+    <div class="muted" style="margin-top:12px">
+      Prefer not to wait? <a href="/assets/Top_5_Conversion_Killers.pdf">Download the PDF directly</a>.
     </div>
   </div>
 
@@ -133,12 +139,14 @@
       document.getElementById('ref').value = document.referrer || '';
     })();
 
+    // Track submit -> GA4 + TikTok + show inline backup thanks
     document.getElementById('leadForm').addEventListener('submit', function(){
       try {
         gtag('event', 'generate_lead', { method: 'form', page_location: location.href });
       } catch (e) {}
       try { ttq.track('SubmitForm'); } catch (e) {}
-      setTimeout(() => { document.getElementById('thanks').style.display = 'block'; }, 300);
+      // brief fallback in case redirect is blocked
+      setTimeout(() => { document.getElementById('thanks').style.display = 'block'; }, 400);
     });
   </script>
 </body>
