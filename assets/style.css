@@ -79,6 +79,28 @@
   .logo img {
     height: 50px;
   }
+}/* === Force Bigger Logo Across Devices === */
+.logo,
+.logo img,
+header .logo,
+header .logo img,
+.header-logo,
+.navbar-brand img {
+  max-width: 180px !important;
+  width: 180px !important;
+  height: auto !important;
 }
 
+/* Mobile responsive override */
+@media (max-width: 768px) {
+  .logo,
+  .logo img,
+  header .logo,
+  header .logo img,
+  .header-logo,
+  .navbar-brand img {
+    max-width: 140px !important;
+    width: 140px !important;
+    height: auto !important;
+  }
 }
