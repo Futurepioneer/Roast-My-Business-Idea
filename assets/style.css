@@ -1,365 +1,168 @@
-/* ===== Ribbon Styles ===== */
+/* ===== RoastYourBiz Stylesheet ===== */
+
+/* === Global Resets & Base === */
+body {
+  margin: 0;
+  font-family: 'Inter', 'Helvetica', Arial, sans-serif;
+  line-height: 1.6;
+  background: #fff;
+  color: #1f2937;
+  animation: fadeInBody 0.8s ease-out forwards;
+}
+@keyframes fadeInBody {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+a { color: inherit; text-decoration: none; transition: all 0.25s ease; }
+a:hover { color: #f97316; transform: translateY(-1px); }
+
+/* === Sticky Ribbon === */
 #ribbon {
   background: #0f172a;
   border-bottom: 1px solid #374151;
   color: #f9fafb;
-  font-size: 1.05rem;                 /* bigger text */
+  font-size: 1.15rem;
   font-weight: 600;
-  padding: 12px 0;                    /* taller bar */
+  padding: 14px 0;
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 4px 14px rgba(0,0,0,.25);
+  box-shadow: 0 6px 18px rgba(0,0,0,.35);
   transform: translateY(-100%);
-  animation: ribbonIn .45s ease-out forwards;  /* slide down on load */
+  animation: ribbonIn 0.6s ease-out forwards;
 }
-
+@keyframes ribbonIn { to { transform: translateY(0); } }
 .ribbon-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 12px;
 }
-
 #ribbon .btn-primary {
-  padding: 10px 16px;                 /* slightly larger button */
-  border-radius: 10px;
-  background: linear-gradient(135deg, var(--brand), var(--accent));
+  padding: 12px 20px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
   color: #fff;
-  font-weight: 700;
-  text-decoration: none;
-  box-shadow: var(--shadow);
-  transition: filter 0.2s ease;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .6px;
+  box-shadow: 0 5px 15px rgba(99,102,241,.4);
+  transition: filter .2s ease, transform .25s ease, box-shadow .25s ease;
 }
-#ribbon .btn-primary:hover { filter: brightness(1.1); }
-
-@keyframes ribbonIn {
-  to { transform: translateY(0); }
+#ribbon .btn-primary:hover {
+  filter: brightness(1.12);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(99,102,241,.55);
 }
-
-/* ===== Ribbon Responsive Styles ===== */
 @media (max-width: 640px) {
-  #ribbon {
-    font-size: 0.95rem;
-    padding: 10px;
-  }
-  .ribbon-inner {
-    flex-direction: column;
-    gap: 8px;
-    text-align: center;
-  }
-  #ribbon .btn-primary {
-    width: 100%;
-    text-align: center;
-  }
-}  /* <-- IMPORTANT: close the mobile media query! */
+  #ribbon { font-size: 1rem; padding: 12px; }
+  .ribbon-inner { flex-direction: column; gap: 8px; text-align: center; }
+  #ribbon .btn-primary { width: 100%; text-align: center; }
+}
 
-
-/* ===== Logo size (wins over everything) ===== */
-.logo,
-.logo img,
-header .logo,
+/* === Header Logo === */
 header .logo img,
-.header-logo,
+.logo img,
 .navbar-brand img {
-  max-width: 180px !important;   /* desktop size */
-  width: 180px !important;
+  width: 230px !important;
   height: auto !important;
+  display: inline-block;
+  vertical-align: middle;
+  transition: transform .25s ease;
 }
-
+header .logo img:hover,
+.logo img:hover { transform: scale(1.04); }
 @media (max-width: 1024px) {
-  .logo,
-  .logo img,
-  header .logo,
-  header .logo img,
-  .header-logo,
-  .navbar-brand img {
-    max-width: 160px !important; /* tablets */
-    width: 160px !important;
-  }
+  header .logo img, .logo img, .navbar-brand img { width: 180px !important; }
 }
-
 @media (max-width: 768px) {
-  .logo,
-  .logo img,
-  header .logo,
-  header .logo img,
-  .header-logo,
-  .navbar-brand img {
-    max-width: 140px !important; /* phones */
-    width: 140px !important;
-  }
+  header .logo img, .logo img, .navbar-brand img { width: 160px !important; }
 }
-/* --- Force bigger logo, wins over everything --- */
-.logo img,
-header .logo img,
-.navbar-brand img,
-.logo,
-header .logo {
-  height: 120px !important;   /* pick your size */
-  width: auto !important;
-  max-height: none !important;
-  max-width: none !important;
-  object-fit: contain;
-}
-
-/* Optional: give the header some breathing room if it feels tight */
-header, .nav, .site-header {
-  min-height: 120px; /* = logo height */
-  align-items: center;
-}
-/* 🚀 UPGRADE TO 10/10 VISUAL IMPACT */
-
-/* Bigger, more commanding logo */
-.logo img {
-    width: 220px !important;  /* 30% bigger than current */
-    height: auto !important;
-    transition: transform 0.3s ease !important;
-}
-
-.logo img:hover {
-    transform: scale(1.05) !important;  /* Subtle hover effect */
-}
-
-/* Enhanced typography hierarchy */
-h1, .hero-title {
-    font-size: 3.2rem !important;
-    font-weight: 900 !important;
-    line-height: 1.1 !important;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3) !important;
-}
-
-h2 {
-    font-size: 2.4rem !important;
-    font-weight: 800 !important;
-}
-
-/* More savage button styling */
-.btn-primary, .cta-button, button[type="submit"] {
-    background: linear-gradient(135deg, #ff4444, #cc0000) !important;
-    border: none !important;
-    font-weight: 800 !important;
-    text-transform: uppercase !important;
-    letter-spacing: 1px !important;
-    box-shadow: 0 8px 20px rgba(255, 68, 68, 0.4) !important;
-    transition: all 0.3s ease !important;
-}
-
-.btn-primary:hover, .cta-button:hover, button[type="submit"]:hover {
-    transform: translateY(-3px) !important;
-    box-shadow: 0 12px 25px rgba(255, 68, 68, 0.6) !important;
-    background: linear-gradient(135deg, #ff6666, #ee0000) !important;
-}
-
-/* Savage accent colors */
-.text-accent, .highlight {
-    color: #ff4444 !important;
-    font-weight: 700 !important;
-}
-
-/* Enhanced mobile experience */
-@media (max-width: 768px) {
-    .logo img {
-        width: 180px !important;  /* Still bigger on mobile */
-    }
-    
-    h1, .hero-title {
-        font-size: 2.8rem !important;
-    }
-    
-    .btn-primary, .cta-button {
-        min-height: 54px !important;  /* Perfect touch target */
-        font-size: 1.1rem !important;
-    }
-}
-
-/* Subtle page load animation */
-body {
-    animation: fadeIn 0.8s ease-out !important;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Enhanced header impact */
-header, .header {
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important;
-    backdrop-filter: blur(10px) !important;
-}
-
-/* Pricing card enhancements */
-.pricing-card, .price-box {
-    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
-    border-radius: 15px !important;
-}
-
-.pricing-card:hover, .price-box:hover {
-    transform: translateY(-10px) !important;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15) !important;
-}
-
-/* Testimonial/social proof styling */
-.testimonial, .review {
-    border-left: 5px solid #ff4444 !important;
-    background: rgba(255, 68, 68, 0.05) !important;
-    padding: 20px !important;
-    border-radius: 10px !important;
-}
-/* 🚀 NUCLEAR 10/10 UPGRADE - OVERRIDE EVERYTHING */
-
-/* MASSIVE logo - impossible to miss */
-img[src*="logo"], .logo, .logo img, header img, .navbar-brand img, .brand img {
-    width: 280px !important;
-    max-width: 280px !important;
-    height: auto !important;
-    transition: all 0.3s ease !important;
-    filter: drop-shadow(2px 2px 8px rgba(0,0,0,0.2)) !important;
-}
-
-img[src*="logo"]:hover, .logo:hover, .logo img:hover {
-    transform: scale(1.08) !important;
-    filter: drop-shadow(4px 4px 12px rgba(0,0,0,0.3)) !important;
-}
-
-/* SAVAGE typography */
-h1, h2, h3, .hero-title, .main-title, .headline {
-    font-weight: 900 !important;
-    text-shadow: 3px 3px 6px rgba(0,0,0,0.4) !important;
-    color: #1a1a1a !important;
-}
-
-h1, .hero-title, .main-title {
-    font-size: 4rem !important;
-    line-height: 1.1 !important;
-    letter-spacing: -1px !important;
-}
-
-h2 {
-    font-size: 2.8rem !important;
-}
-
-/* BRUTAL buttons */
-button, .btn, .button, input[type="submit"], a[href*="tally"] {
-    background: linear-gradient(135deg, #ff1744, #d50000) !important;
-    color: white !important;
-    border: none !important;
-    padding: 18px 36px !important;
-    font-size: 1.2rem !important;
-    font-weight: 800 !important;
-    text-transform: uppercase !important;
-    letter-spacing: 1.5px !important;
-    border-radius: 12px !important;
-    box-shadow: 0 10px 30px rgba(255, 23, 68, 0.5) !important;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
-    cursor: pointer !important;
-}
-
-button:hover, .btn:hover, .button:hover, input[type="submit"]:hover {
-    transform: translateY(-5px) scale(1.05) !important;
-    box-shadow: 0 15px 40px rgba(255, 23, 68, 0.7) !important;
-    background: linear-gradient(135deg, #ff4569, #ff1744) !important;
-}
-
-/* Aggressive color scheme + animations */
-body {
-    font-family: 'Inter', 'Helvetica', Arial, sans-serif !important;
-    line-height: 1.6 !important;
-    animation: fadeInUp 1s ease-out !important;
-}
-
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* PREMIUM header styling */
-header, .header, nav, .navbar {
-    background: rgba(255, 255, 255, 0.95) !important;
-    backdrop-filter: blur(15px) !important;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.1) !important;
-    padding: 15px 0 !important;
-}
-
-/* Savage accent */
-.text-primary, .accent, strong, b {
-    color: #ff1744 !important;
-    font-weight: 700 !important;
-}
-
-/* Pricing card enhancements */
-.card, .pricing-card, .price-box, .plan {
-    border: 2px solid transparent !important;
-    border-radius: 20px !important;
-    padding: 30px !important;
-    transition: all 0.4s ease !important;
-    background: white !important;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important;
-}
-
-.card:hover, .pricing-card:hover, .price-box:hover {
-    transform: translateY(-15px) !important;
-    box-shadow: 0 25px 60px rgba(0,0,0,0.2) !important;
-    border-color: #ff1744 !important;
-}
-
-/* MOBILE perfection */
-@media (max-width: 768px) {
-    img[src*="logo"], .logo, .logo img {
-        width: 220px !important;
-        max-width: 220px !important;
-    }
-    h1, .hero-title, .main-title {
-        font-size: 2.8rem !important;
-    }
-    button, .btn, .button {
-        min-height: 60px !important;
-        font-size: 1.1rem !important;
-        padding: 20px 30px !important;
-    }
-}
-
-/* EXTRA small mobile */
 @media (max-width: 480px) {
-    img[src*="logo"], .logo, .logo img {
-        width: 180px !important;
-    }
-    h1, .hero-title, .main-title {
-        font-size: 2.4rem !important;
-    }
+  header .logo img, .logo img, .navbar-brand img { width: 140px !important; }
+}
+header, .site-header, .nav {
+  display: flex;
+  align-items: center;
+  min-height: 90px;
 }
 
-/* Global smooth transitions */
-* {
-    transition: all 0.3s ease !important;
+/* === Headings === */
+h1, .hero-title {
+  font-size: 3.6rem;
+  font-weight: 900;
+  line-height: 1.1;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+h2 {
+  font-size: 2.4rem;
+  font-weight: 800;
 }
 
-a:hover, .link:hover {
-    transform: translateY(-2px) !important;
-    color: #ff1744 !important;
+/* === Buttons / CTAs === */
+.btn-primary, .cta-button, button[type="submit"], a[href*="tally"] {
+  background: linear-gradient(135deg, #f97316, #ea580c);
+  color: #fff;
+  border: none;
+  padding: 16px 32px;
+  font-size: 1.2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(249,115,22,.45);
+  transition: all 0.3s cubic-bezier(.175,.885,.32,1.275);
+  cursor: pointer;
+}
+.btn-primary:hover, .cta-button:hover, button[type="submit"]:hover, a[href*="tally"]:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 32px rgba(249,115,22,.65);
+  background: linear-gradient(135deg, #fb923c, #f97316);
+}
+@media (max-width: 768px) {
+  .btn-primary, .cta-button, button[type="submit"], a[href*="tally"] {
+    min-height: 50px;
+    font-size: 1.05rem;
+    padding: 14px 24px;
+  }
 }
 
-/* Testimonials */
+/* === Pricing Cards === */
+.card, .pricing-card, .price-box, .plan {
+  border-radius: 16px;
+  background: #fff;
+  padding: 24px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.1);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.card:hover, .pricing-card:hover, .price-box:hover, .plan:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,.2);
+  border-color: #f97316;
+}
+
+/* === Testimonials === */
 .testimonial, .review, blockquote {
-    border-left: 6px solid #ff1744 !important;
-    background: linear-gradient(135deg, rgba(255, 23, 68, 0.05), rgba(255, 23, 68, 0.02)) !important;
-    padding: 25px !important;
-    border-radius: 15px !important;
-    margin: 20px 0 !important;
+  border-left: 5px solid #f97316;
+  background: rgba(249,115,22,0.05);
+  padding: 20px;
+  border-radius: 12px;
+  margin: 20px 0;
 }
 
-/* Form styling */
+/* === Forms === */
 input, textarea, select {
-    border: 2px solid #e0e0e0 !important;
-    border-radius: 10px !important;
-    padding: 15px !important;
-    font-size: 1.1rem !important;
-    transition: all 0.3s ease !important;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 14px;
+  font-size: 1rem;
+  transition: all 0.25s ease;
+}
+input:focus, textarea:focus, select:focus {
+  border-color: #f97316;
+  box-shadow: 0 0 0 3px rgba(249,115,22,0.15);
+  outline: none;
 }
 
-input:focus, textarea:focus, select:focus {
-    border-color: #ff1744 !important;
-    box-shadow: 0 0 0 3px rgba(255, 23, 68, 0.1) !important;
-    outline: none !important;
-}
+/* === Global Smooth Transitions === */
+* { transition: all 0.25s ease; }
