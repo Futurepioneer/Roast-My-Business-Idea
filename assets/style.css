@@ -90,3 +90,21 @@ header .logo img,
     width: 140px !important;
   }
 }
+/* --- Force bigger logo, wins over everything --- */
+.logo img,
+header .logo img,
+.navbar-brand img,
+.logo,
+header .logo {
+  height: 120px !important;   /* pick your size */
+  width: auto !important;
+  max-height: none !important;
+  max-width: none !important;
+  object-fit: contain;
+}
+
+/* Optional: give the header some breathing room if it feels tight */
+header, .nav, .site-header {
+  min-height: 120px; /* = logo height */
+  align-items: center;
+}
